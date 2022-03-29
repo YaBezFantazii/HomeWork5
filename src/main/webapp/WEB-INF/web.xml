@@ -1,0 +1,43 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>rating</servlet-name>
+    <servlet-class>Servlets.rating</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>rating</servlet-name>
+    <url-pattern>/rating</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>gameArchive</servlet-name>
+    <servlet-class>Servlets.gameArchive</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>gameArchive</servlet-name>
+    <url-pattern>/gameArchive</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>nowGame</servlet-name>
+    <servlet-class>Servlets.nowGame</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>nowGame</servlet-name>
+    <url-pattern>/nowGame</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>playerNick</servlet-name>
+    <servlet-class>Servlets.playerNick</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>playerNick</servlet-name>
+    <url-pattern>/playerNick</url-pattern>
+  </servlet-mapping>
+
+</web-app>

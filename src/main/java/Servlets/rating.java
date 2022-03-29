@@ -16,4 +16,10 @@ public class rating extends HttpServlet {
         getServletContext().getRequestDispatcher("/rating.jsp").forward(request, response);
     }
 
+    public void doGet (HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        // Передаем данные из файла Result.txt (общий рейтинг) в одноименный jsp
+        request.setAttribute("rating", ReadRating.ReadFile());
+        getServletContext().getRequestDispatcher("/rating.jsp").forward(request, response);
+    }
+
 }

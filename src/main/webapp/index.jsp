@@ -6,7 +6,7 @@
 <body>
 
 <div id="main">
-    <form action="playerNick.jsp" method="get">
+    <form action="playerNick" method="get">
         <input type="submit" value="Играть"/>
     </form>
     <form action="rating" method="post">

@@ -38,9 +38,9 @@ public class playerNick extends HttpServlet {
                 GameList GameList = new GameList();
                 GameList.setNickName(name1,name2);
                 session.setAttribute("GameList",GameList);
+                response.sendRedirect("/gameplay/nowGame");
             }
             // Переходим к игре (nowGame.jsp)
-            getServletContext().getRequestDispatcher("/nowGame.jsp").forward(request, response);
         }
 
 
@@ -48,6 +48,7 @@ public class playerNick extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         request.setAttribute("error"," ");
         getServletContext().getRequestDispatcher("/playerNick.jsp").forward(request, response);
+        doPost(request,response);
     }
 
 }

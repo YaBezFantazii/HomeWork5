@@ -106,9 +106,21 @@ public class nowGame extends HttpServlet {
 
     public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String name1 = request.getParameter("nick1");
-        String name2 = request.getParameter("nick2");
-        getServletContext().getRequestDispatcher("/nowGame.jsp?nick1="+name1+"&nick2="+name2).forward(request, response);
+        HttpSession session = request.getSession(false);
+        // Если сессии не существует, то перекидываем пользователя на страницу ввода имен
+        if (session.getAttribute("GameList")==null){
+            response.sendRedirect("/gameplay/playerNick.jsp");
+        } else {
+            request.setAttribute("field","");
+            request.setAttribute("error","");
+            // Получаем в объект Game данные об игре из сессии, в которой хранится объект того же класса
+            GameList Game = (GameList) session.getAttribute("GameList");
+            request.setAttribute("nick1",Game.getNickName1());
+            request.setAttribute("nick2",Game.getNickName2());
+            request.setAttribute("field", PrintGame.PrintGame(Game));
+            getServletContext().getRequestDispatcher("/nowGame.jsp").forward(request, response);
+            doPost(request,response);
+        }
     }
 
 }

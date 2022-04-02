@@ -1,12 +1,12 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
     <servlet-name>rating</servlet-name>
-    <servlet-class>Servlets.rating</servlet-class>
+    <servlet-class>Servlets.Rating</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>rating</servlet-name>
@@ -15,7 +15,7 @@
 
   <servlet>
     <servlet-name>gameArchive</servlet-name>
-    <servlet-class>Servlets.gameArchive</servlet-class>
+    <servlet-class>Servlets.GameArchive</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>gameArchive</servlet-name>
@@ -24,7 +24,7 @@
 
   <servlet>
     <servlet-name>nowGame</servlet-name>
-    <servlet-class>Servlets.nowGame</servlet-class>
+    <servlet-class>Servlets.NowGame</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>nowGame</servlet-name>
@@ -33,11 +33,20 @@
 
   <servlet>
     <servlet-name>playerNick</servlet-name>
-    <servlet-class>Servlets.playerNick</servlet-class>
+    <servlet-class>Servlets.PlayerNick</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>playerNick</servlet-name>
     <url-pattern>/playerNick</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DataBase</servlet-name>
+    <servlet-class>Servlets.DataBase</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DataBase</servlet-name>
+    <url-pattern>/DataBase</url-pattern>
   </servlet-mapping>
 
 </web-app>

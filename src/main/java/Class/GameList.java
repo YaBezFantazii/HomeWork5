@@ -46,6 +46,10 @@ public class GameList {
         cell.add(number);
     }
 
+    public void setCell (ArrayList<Integer> steps){
+        this.cell = steps;
+    }
+
     public int getWin() {
         return win;
     }

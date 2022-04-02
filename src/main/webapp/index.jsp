@@ -15,6 +15,9 @@
     <form action="gameArchive" method="get">
         <input type="submit" value="Записанные игры"/>
     </form>
+    <form action="DataBase" method="get">
+        <input type="submit" value="Данные из БД"/>
+    </form>
 </div>
 </body>
 </html>

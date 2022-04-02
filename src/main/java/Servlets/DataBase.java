@@ -36,7 +36,7 @@ public class DataBase extends HttpServlet {
     public void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setCharacterEncoding("UTF-8");
         request.setAttribute("game", "");
-        new CheckNewTable();
+        CheckNewTable.CheckNewTable();
         ArrayList<String> GameList = new ArrayList<>();
         try {
             GameList = WriteRead.Read.GameListDB();

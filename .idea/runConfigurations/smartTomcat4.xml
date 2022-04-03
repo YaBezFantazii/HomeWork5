@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="smartTomcat3" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
+  <configuration default="false" name="smartTomcat4" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY">
     <option name="adminPort" value="8005" />
     <option name="contextPath" value="/gameplay" />
     <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
@@ -11,8 +11,8 @@
     <option name="tomcatInfo">
       <TomcatInfo>
         <option name="name" value="Apache Tomcat/9.0.60" />
-        <option name="number" value="3" />
-        <option name="path" value="/apache-tomcat-9.0.60" />
+        <option name="number" value="4" />
+        <option name="path" value="apache-tomcat-9.0.60" />
         <option name="version" value="9.0.60.0" />
       </TomcatInfo>
     </option>

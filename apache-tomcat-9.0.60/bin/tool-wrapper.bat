@@ -35,7 +35,7 @@ rem
 rem   JAVA_ENDORSED_DIRS (Optional) Lists of of semi-colon separated directories
 rem                   containing some jars in order to allow replacement of APIs
 rem                   created outside of the JCP (i.e. DOM and SAX from W3C).
-rem                   It can also be used to update the XML parser implementation.
+rem                   It can also be used to update the xml parser implementation.
 rem                   This is only supported for Java <= 8.
 rem                   Defaults to $CATALINA_HOME/endorsed.
 rem ---------------------------------------------------------------------------

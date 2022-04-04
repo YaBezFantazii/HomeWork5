@@ -59,10 +59,10 @@ sources of authentication information:</p>
     </li>
 <li><a href="#UserDatabaseRealm">UserDatabaseRealm</a> - Accesses authentication
     information stored in an UserDatabase JNDI resource, which is typically
-    backed by an XML document (<code>conf/tomcat-users.xml</code>).</li>
+    backed by an xml document (<code>conf/tomcat-users.xml</code>).</li>
 <li><a href="#MemoryRealm">MemoryRealm</a> - Accesses authentication
     information stored in an in-memory object collection, which is initialized
-    from an XML document (<code>conf/tomcat-users.xml</code>).</li>
+    from an xml document (<code>conf/tomcat-users.xml</code>).</li>
 <li><a href="#JAASRealm">JAASRealm</a> - Accesses authentication information
     through the Java Authentication &amp; Authorization Service (JAAS)
     framework.</li>
@@ -84,7 +84,7 @@ and integrate it with Tomcat.  To do so, you need to:</p>
 
 <p>Before getting into the details of the standard Realm implementations, it is
 important to understand, in general terms, how a Realm is configured.  In
-general, you will be adding an XML element to your <code>conf/server.xml</code>
+general, you will be adding an xml element to your <code>conf/server.xml</code>
 configuration file, that looks something like this:</p>
 
 <div class="codeBox"><pre><code>&lt;Realm className="... class name for this implementation"
@@ -376,7 +376,7 @@ name "java:/comp/env/jdbc/authority".</p>
 <p><strong>JNDIRealm</strong> is an implementation of the Tomcat
 <code>Realm</code> interface that looks up users in an LDAP directory
 server accessed by a JNDI provider (typically, the standard LDAP
-provider that is available with the JNDI API classes). The realm
+provider that is available with the JNDI API model). The realm
 supports a variety of approaches to using a directory for
 authentication.</p>
 
@@ -751,13 +751,13 @@ authentication is usually to be preferred.</p>
 
 <p><strong>UserDatabaseRealm</strong> is an implementation of the Tomcat
 <code>Realm</code> interface that uses a JNDI resource to store user
-information. By default, the JNDI resource is backed by an XML file. It is not
+information. By default, the JNDI resource is backed by an xml file. It is not
 designed for large-scale production use. At startup time, the UserDatabaseRealm
-loads information about all users, and their corresponding roles, from an XML
+loads information about all users, and their corresponding roles, from an xml
 document (by default, this document is loaded from
 <code>$CATALINA_BASE/conf/tomcat-users.xml</code>). The users, their passwords
 and their roles may all be editing dynamically, typically via JMX. Changes may
-be saved and will be reflected in the XML file.</p>
+be saved and will be reflected in the xml file.</p>
 
 <h5>Realm Element Attributes</h5>
 
@@ -769,7 +769,7 @@ configuration documentation.</p>
 
 <h5>User File Format</h5>
 
-<p>For the XML file based <code>UserDatabase</code>, the users file uses the
+<p>For the xml file based <code>UserDatabase</code>, the users file uses the
 same format as the <a href="#MemoryRealm">MemoryRealm</a>.</p>
 
 <h5>Example</h5>
@@ -823,7 +823,7 @@ to all virtual hosts and web applications.  The default contents of the
 <p><strong>MemoryRealm</strong> is a simple demonstration implementation of the
 Tomcat <code>Realm</code> interface.  It is not designed for production use.
 At startup time, MemoryRealm loads information about all users, and their
-corresponding roles, from an XML document (by default, this document is loaded
+corresponding roles, from an xml document (by default, this document is loaded
 from <code>$CATALINA_BASE/conf/tomcat-users.xml</code>).  Changes to the data
 in this file are not recognized until Tomcat is restarted.</p>
 
@@ -838,7 +838,7 @@ configuration documentation.</p>
 <h5>User File Format</h5>
 
 <p>The users file (by default, <code>conf/tomcat-users.xml</code> must be an
-XML document, with a root element <code>&lt;tomcat-users&gt;</code>.  Nested
+xml document, with a root element <code>&lt;tomcat-users&gt;</code>.  Nested
 inside the root element will be a <code>&lt;user&gt;</code> element for each
 valid user, consisting of the following attributes:</p>
 <ul>
@@ -903,7 +903,7 @@ integration with the CMA as implemented by Tomcat.
         <p>To set up Tomcat to use JAASRealm with your own JAAS login module,
  you will need to follow these steps:</p>
         <ol>
-          <li>Write your own LoginModule, User and Role classes based
+          <li>Write your own LoginModule, User and Role model based
 on JAAS (see
 <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/tutorials/GeneralAcnOnly.html">
 the JAAS Authentication Tutorial</a> and
@@ -914,12 +914,12 @@ When developing your LoginModule, note that JAASRealm's built-in <code>CallbackH
 only recognizes the <code>NameCallback</code> and <code>PasswordCallback</code> at present.
           </li>
           <li>Although not specified in JAAS, you should create
-separate classes to distinguish between users and roles, extending <code>javax.security.Principal</code>,
+separate model to distinguish between users and roles, extending <code>javax.security.Principal</code>,
 so that Tomcat can tell which Principals returned from your login
 module are users and which are roles (see <code>org.apache.catalina.realm.JAASRealm</code>).
 Regardless, the first Principal returned is <em>always</em> treated as the user Principal.
           </li>
-          <li>Place the compiled classes on Tomcat's classpath
+          <li>Place the compiled model on Tomcat's classpath
           </li>
           <li>Set up a login.config file for Java (see <a href="http://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/tutorials/LoginConfigFile.html">
 JAAS LoginConfig file</a>) and tell Tomcat where to find it by specifying

@@ -119,7 +119,7 @@
         <listener-class>async.AsyncStockContextListener</listener-class>
     </listener>
 
-    <!-- Define servlets that are included in the example application -->
+    <!-- Define controller that are included in the example application -->
 
     <servlet>
       <servlet-name>ServletToJsp</servlet-name>
@@ -160,27 +160,27 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>HelloWorldExample</servlet-name>
-        <url-pattern>/servlets/servlet/HelloWorldExample</url-pattern>
+        <url-pattern>/controller/servlet/HelloWorldExample</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RequestInfoExample</servlet-name>
-        <url-pattern>/servlets/servlet/RequestInfoExample/*</url-pattern>
+        <url-pattern>/controller/servlet/RequestInfoExample/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RequestHeaderExample</servlet-name>
-        <url-pattern>/servlets/servlet/RequestHeaderExample</url-pattern>
+        <url-pattern>/controller/servlet/RequestHeaderExample</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RequestParamExample</servlet-name>
-        <url-pattern>/servlets/servlet/RequestParamExample</url-pattern>
+        <url-pattern>/controller/servlet/RequestParamExample</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CookieExample</servlet-name>
-        <url-pattern>/servlets/servlet/CookieExample</url-pattern>
+        <url-pattern>/controller/servlet/CookieExample</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SessionExample</servlet-name>
-        <url-pattern>/servlets/servlet/SessionExample</url-pattern>
+        <url-pattern>/controller/servlet/SessionExample</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ServletToJsp</servlet-name>
@@ -371,7 +371,7 @@
     </servlet>
     <servlet-mapping>
       <servlet-name>bytecounter</servlet-name>
-      <url-pattern>/servlets/nonblocking/bytecounter</url-pattern>
+      <url-pattern>/controller/nonblocking/bytecounter</url-pattern>
     </servlet-mapping>
     <servlet>
       <servlet-name>numberwriter</servlet-name>
@@ -380,7 +380,7 @@
     </servlet>
     <servlet-mapping>
       <servlet-name>numberwriter</servlet-name>
-      <url-pattern>/servlets/nonblocking/numberwriter</url-pattern>
+      <url-pattern>/controller/nonblocking/numberwriter</url-pattern>
     </servlet-mapping>
 
     <!-- Server Push examples -->
@@ -390,7 +390,7 @@
     </servlet>
     <servlet-mapping>
       <servlet-name>simpleimagepush</servlet-name>
-      <url-pattern>/servlets/serverpush/simpleimage</url-pattern>
+      <url-pattern>/controller/serverpush/simpleimage</url-pattern>
     </servlet-mapping>
 
     <!-- Trailer examples -->
@@ -400,7 +400,7 @@
     </servlet>
     <servlet-mapping>
       <servlet-name>responsetrailer</servlet-name>
-      <url-pattern>/servlets/trailers/response</url-pattern>
+      <url-pattern>/controller/trailers/response</url-pattern>
     </servlet-mapping>
 
     <welcome-file-list>

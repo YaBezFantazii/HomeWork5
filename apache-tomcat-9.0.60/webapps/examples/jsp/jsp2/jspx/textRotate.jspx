@@ -31,7 +31,7 @@
   <c:set var="name" value='${empty fn:escapeXml(param["name"]) ? "JSPX" : fn:escapeXml(param["name"])}'/>
   <g id="testContent">
     <text class="title" x="50%" y="10%" font-size="15" text-anchor="middle" >
-            JSP 2.0 XML Syntax (.jspx) Demo</text>
+            JSP 2.0 xml Syntax (.jspx) Demo</text>
     <text class="title" x="50%" y="15%" font-size="15" text-anchor="middle" >
             Try changing the name parameter!</text>
     <g opacity="1.0" transform="translate(225, 250)" id="rotatedText">

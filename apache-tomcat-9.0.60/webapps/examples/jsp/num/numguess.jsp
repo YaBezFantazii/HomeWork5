@@ -16,7 +16,7 @@
 
   Number Guess Game
   Written by Jason Hunter, CTO, K&A Software
-  http://www.servlets.com
+  http://www.controller.com
 --%>
 
 <%@ page import = "num.NumberGuessBean" %>

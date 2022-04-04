@@ -63,8 +63,8 @@
         deployment of web applications. If not specified, the default of
         <code>webapps</code> will be used.</p>
       </td></tr><tr><td><code class="attributeName">xmlBase</code></td><td>
-        <p>The <em>XML Base</em> directory for this virtual host.
-        This is the pathname of a directory that may contain context XML
+        <p>The <em>xml Base</em> directory for this virtual host.
+        This is the pathname of a directory that may contain context xml
         descriptors to be deployed on this virtual host.  You may specify an
         absolute pathname for this directory, or a pathname that is relative
         to the <code>$CATALINA_BASE</code> directory.  See
@@ -84,8 +84,8 @@
         or updated web applications while Tomcat is running. If
         <code>true</code>, Tomcat periodically checks the <code>appBase</code>
         and <code>xmlBase</code> directories and deploys any new web
-        applications or context XML descriptors found. Updated web applications
-        or context XML descriptors will trigger a reload of the web application.
+        applications or context xml descriptors found. Updated web applications
+        or context xml descriptors will trigger a reload of the web application.
         The default is <code>true</code>. See
         <a href="#Automatic_Application_Deployment">Automatic Application
         Deployment</a> for more information.</p>
@@ -180,18 +180,18 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="attributeName">copyXML</code></td><td>
-        <p>Set to <code>true</code> if you want a context XML descriptor
+        <p>Set to <code>true</code> if you want a context xml descriptor
         embedded inside the application (located at
         <code>/META-INF/context.xml</code>) to be copied to <code>xmlBase</code>
         when the application is deployed. On subsequent starts, the copied
-        context XML descriptor will be used in preference to any context XML
+        context xml descriptor will be used in preference to any context xml
         descriptor embedded inside the application even if the descriptor
         embedded inside the application is more recent. The default is
         <code>false</code>.  Note if <strong>deployXML</strong> is
         <code>false</code>, this attribute will have no effect.</p>
       </td></tr><tr><td><code class="attributeName">deployXML</code></td><td>
         <p>Set to <code>false</code> if you want to disable parsing the context
-        XML descriptor embedded inside the application (located at
+        xml descriptor embedded inside the application (located at
         <code>/META-INF/context.xml</code>). Security conscious environments
         should set this to <code>false</code> to prevent applications from
         interacting with the container's configuration. The  administrator will
@@ -244,7 +244,7 @@
         this Host. Each application will have its own sub directory with
         temporary read-write use.  Configuring a Context workDir will override
         use of the Host workDir configuration.  This directory will be made
-        visible to servlets in the web application by a servlet context
+        visible to controller in the web application by a servlet context
         attribute (of type <code>java.io.File</code>) named
         <code>javax.servlet.context.tempdir</code> as described in the
         Servlet Specification.  If not specified, a suitable directory
@@ -360,7 +360,7 @@
     re-deployed or reloaded. Re-deployment involves the creation of a new web
     application and, if using the standard session manager, user sessions will
     not be retained. Reloading uses the existing web application but re-parses
-    the web.xml and reloads any classes. If using the standard session manager,
+    the web.xml and reloads any model. If using the standard session manager,
     user sessions will be persisted.</p>
 
     <p>Users may add to the files that the automatic deployment process monitors
@@ -371,7 +371,7 @@
     further details.</p>
 
     <p>When using automatic deployment, the <code>docBase</code> defined by
-    an XML <a href="context.html">Context</a> file should be outside of the
+    an xml <a href="context.html">Context</a> file should be outside of the
     <code>appBase</code> directory. If this is not the case, difficulties
     may be experienced deploying the web application or the application may
     be deployed twice. The <code>deployIgnore</code> attribute can be used

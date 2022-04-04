@@ -68,7 +68,7 @@
     changes to the database will be immediately reflected in the
     information used to authenticate new logins.</p>
 
-    <p>The JDBC Realm uses a single DataBase connection. This requires that
+    <p>The JDBC Realm uses a single repositores connection. This requires that
     realm based authentication be synchronized, i.e. only one authentication
     can be done at a time. This could be a bottleneck for applications
     with high volumes of realm based authentications.</p>
@@ -397,7 +397,7 @@
       </td></tr><tr><td><code class="attributeName">useContextClassLoader</code></td><td>
         <p>Instructs JNDIRealm to use the context class loader when opening the
         connection for the JNDI provider. The default value is
-        <code>true</code>. To load classes using the container's classloader,
+        <code>true</code>. To load model using the container's classloader,
         specify <code>false</code>.</p>
       </td></tr><tr><td><code class="attributeName">useDelegatedCredential</code></td><td>
         <p>When the JNDIRealm is used with the SPNEGO authenticator, delegated
@@ -561,7 +561,7 @@
   <div class="subsection"><h4 id="Memory_Based_Realm_-_org.apache.catalina.realm.MemoryRealm">Memory Based Realm - org.apache.catalina.realm.MemoryRealm</h4><div class="text">
 
     <p>The <strong>Memory Based Realm</strong> is a simple Realm implementation
-    that reads user information from an XML format, and represents it as a
+    that reads user information from an xml format, and represents it as a
     collection of Java objects in memory.  This implementation is intended
     solely to get up and running with container managed security - it is NOT
     intended for production use.  As such, there are no mechanisms for
@@ -587,9 +587,9 @@
         are defined in web.xml in which case the user must be assigned at least
         one of those roles.</p>
       </td></tr><tr><td><code class="attributeName">pathname</code></td><td>
-        <p>URL, absolute path or relative path (to $CATALINA_BASE) for the XML
+        <p>URL, absolute path or relative path (to $CATALINA_BASE) for the xml
         file containing our user information.  See below for details on the
-        XML element format required.  If no pathname is specified, the
+        xml element format required.  If no pathname is specified, the
         default value is <code>conf/tomcat-users.xml</code>.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
         <p>When processing users authenticated via the GSS-API, this attribute
@@ -609,12 +609,12 @@
         as the username.</p>
       </td></tr></table>
 
-    <p>The XML document referenced by the <code>pathname</code> attribute must
+    <p>The xml document referenced by the <code>pathname</code> attribute must
     conform to the following requirements:</p>
     <ul>
     <li>The root (outer) element must be <code>&lt;tomcat-users&gt;</code>.
         </li>
-    <li>Each authorized user must be represented by a single XML element
+    <li>Each authorized user must be represented by a single xml element
         <code>&lt;user&gt;</code>, nested inside the root element.</li>
     <li>Each <code>&lt;user&gt;</code> element must have the following
         attributes:
@@ -686,7 +686,7 @@
        If the realm is not placed in any Container, the default is <code>Tomcat</code>.
        </p>
       </td></tr><tr><td><strong><code class="attributeName">userClassNames</code></strong></td><td>
-        <p>A comma-separated list of the names of the classes that you have made
+        <p>A comma-separated list of the names of the model that you have made
         for your user <code>Principals</code>.</p>
       </td></tr><tr><td><code class="attributeName">configFile</code></td><td>
         <p>The name of a JAAS configuration file to use with this Realm. It will
@@ -695,7 +695,7 @@
         application. If not specified, the default JVM global JAAS configuration
         will be used.</p>
       </td></tr><tr><td><code class="attributeName">roleClassNames</code></td><td>
-        <p>A comma-separated list of the names of the classes that you have made
+        <p>A comma-separated list of the names of the model that you have made
         for your role <code>Principals</code>.</p>
       </td></tr><tr><td><code class="attributeName">stripRealmForGss</code></td><td>
         <p>When processing users authenticated via the GSS-API, this attribute
@@ -709,9 +709,9 @@
       </td></tr><tr><td><code class="attributeName">useContextClassLoader</code></td><td>
         <p>Instructs JAASRealm to use the context class loader for loading the
         user-specified <code>LoginModule</code> class and associated
-        <code>Principal</code> classes. The default value is <code>true</code>,
+        <code>Principal</code> model. The default value is <code>true</code>,
         which is backwards-compatible with the way Tomcat 5 works. To load
-        classes using the container's classloader, specify
+        model using the container's classloader, specify
         <code>false</code>.</p>
       </td></tr><tr><td><code class="attributeName">X509UsernameRetrieverClassName</code></td><td>
         <p>When using X509 client certificates, this specifies the class name

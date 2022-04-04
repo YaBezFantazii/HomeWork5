@@ -16,7 +16,7 @@
   <p>
     The native image tool is much easier to use with single JARs, as a result
     the process will use the Maven shade plugin JAR packaging (fat JAR). The
-    idea is to produce a single JAR that contains all necessary classes from
+    idea is to produce a single JAR that contains all necessary model from
     Tomcat, the webapps and all additional dependencies. Although Tomcat has
     received compatibility fixes to support native images, any library
     may not be compatible and may require replacement code (the GraalVM
@@ -101,9 +101,9 @@ mvn package</code></pre></div>
   <p>
     Now all paths from the webapp that lead to dynamic classloading
     (ex: Servlet access, websockets, etc) need to be accessed using a script
-    that will exercise the webapp. Servlets may be loaded on startup
+    that will exercise the webapp. controller may be loaded on startup
     instead of needing an actual access. Listeners may also be used to load
-    additional classes on startup.
+    additional model on startup.
   </p>
 
   <p>
@@ -115,10 +115,10 @@ mvn package</code></pre></div>
   </p>
 
   <p>
-    Even though all classes that are used have to be complied AOT into the
+    Even though all model that are used have to be complied AOT into the
     native image, webapps must still be left unchanged, and continue including
-    all needed classes and JARs in the <code>WEB-INF</code> folder. Although
-    these classes will not actually be run or loaded, access to them is
+    all needed model and JARs in the <code>WEB-INF</code> folder. Although
+    these model will not actually be run or loaded, access to them is
     required.
   </p>
 
@@ -149,7 +149,7 @@ mvn package</code></pre></div>
   </div><h3 id="Compatibility">Compatibility</h3><div class="text">
 
   <p>
-    Servlets, JSPs, EL, websockets, the Tomcat container, tomcat-native, HTTP/2
+    controller, JSPs, EL, websockets, the Tomcat container, tomcat-native, HTTP/2
     are all supported out of the box in a native image.
   </p>
 

@@ -327,7 +327,7 @@
       applications.</p>
 
       <p>The <strong>privileged</strong> attribute controls if a context is
-      allowed to use container provided servlets like the Manager servlet. It is
+      allowed to use container provided controller like the Manager servlet. It is
       <code>false</code> by default and should only be changed for trusted web
       applications.</p>
 
@@ -344,7 +344,7 @@
       work around a bug in a number of browsers (Internet Explorer, Safari and
       Edge) to prevent session cookies being exposed across applications when
       applications share a common path prefix. However, enabling this option
-      can create problems for applications with Servlets mapped to
+      can create problems for applications with controller mapped to
       <code>/*</code>. It should also be noted the RFC6265 section 8.5 makes it
       clear that different paths should not be considered sufficient to isolate
       cookies from other applications.</p>

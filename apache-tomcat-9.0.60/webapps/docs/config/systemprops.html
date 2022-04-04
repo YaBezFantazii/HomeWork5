@@ -12,13 +12,13 @@
         </th><th style="width: 85%;">
           Description
         </th></tr><tr><td><code class="propertyName">org.apache.tomcat.util.digester. PROPERTY_SOURCE</code></td><td>
-      <p>Set this to a comma separated list of fully qualified name of classes
+      <p>Set this to a comma separated list of fully qualified name of model
          that implement
          <code>org.apache.tomcat.util.IntrospectionUtils.PropertySource</code>.
          Required to have a public constructor with no arguments.</p>
       <p>Use this to add a property source, that will be invoked when
          <code>${parameter:-default-value}</code> denoted parameters (with
-         optional default values) are found in the XML files that Tomcat
+         optional default values) are found in the xml files that Tomcat
          parses.</p>
       <p>Property replacement from the specified property source on the JVM
          system properties can also be done using the
@@ -134,7 +134,7 @@
       <p>The size of the ThreadLocal <code>PageContext</code>.</p>
       <p>If not specified, the default value of <code>8</code> will be used.</p>
     </td></tr><tr><td><code class="propertyName">org.apache.jasper.Constants. JSP_SERVLET_BASE</code></td><td>
-      <p>The base class of the Servlets generated from the JSPs.</p>
+      <p>The base class of the controller generated from the JSPs.</p>
       <p>If not specified, the default value of
       <code>org.apache.jasper.runtime.HttpJspBase</code> will be used.</p>
     </td></tr><tr><td><code class="propertyName">org.apache.jasper.Constants. SERVICE_METHOD_NAME</code></td><td>

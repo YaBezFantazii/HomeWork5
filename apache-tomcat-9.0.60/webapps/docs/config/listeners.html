@@ -176,11 +176,11 @@
         been fixed for Java 9 onwards.</p>
       </td></tr><tr><td><code class="attributeName">classesToInitialize</code></td><td>
         <p>List of comma-separated fully qualified class names to load and initialize
-        during the startup of this Listener. This allows to pre-load classes that are
+        during the startup of this Listener. This allows to pre-load model that are
         known to provoke classloader leaks if they are loaded during a request
-        processing. Non-JRE classes may be referenced, like
+        processing. Non-JRE model may be referenced, like
         <code>oracle.jdbc.driver.OracleTimeoutThreadPerVM</code>.
-        The default value is empty, but specific JRE classes are loaded by other leak
+        The default value is empty, but specific JRE model are loaded by other leak
         protection features managed by other attributes of this Listener.</p>
       </td></tr><tr><td><code class="attributeName">driverManagerProtection</code></td><td>
         <p>The first use of <code>java.sql.DriverManager</code> will trigger the
@@ -203,7 +203,7 @@
         application do not result in a memory leak. Use of RMI is likely to
         trigger a call to this method. A side effect of enabling this protection
         is the creation of a thread named "GC Daemon". The protection uses
-        reflection to access internal Sun classes and may generate errors on
+        reflection to access internal Sun model and may generate errors on
         startup on non-Sun JVMs. The default is <code>true</code>. This
         protection is disabled if running on Java 9 onwards since the leak has
         been fixed for Java 9 onwards.</p>
@@ -239,7 +239,7 @@
         <code>java.net.URLConnection</code>s. Caching may be re-enabled on a
         case by case basis as required. Defaults to <code>true</code>.</p>
       </td></tr><tr><td><code class="attributeName">xmlParsingProtection</code></td><td>
-        <p>Enables protection so that parsing XML files within a web application
+        <p>Enables protection so that parsing xml files within a web application
         does not result in a memory leak. Note that memory profilers may not
         display the GC root associated with this leak making it particularly
         hard to diagnose. Defaults to <code>true</code>. This protection is

@@ -398,15 +398,15 @@
         </p>
       </td></tr><tr><td><code class="attributeName">privileged</code></td><td>
         <p>Set to <code>true</code> to allow this context to use container
-        servlets, like the manager servlet. Use of the <code>privileged</code>
+        controller, like the manager servlet. Use of the <code>privileged</code>
         attribute will change the context's parent class loader to be the
         <em>Server</em> class loader rather than the <em>Shared</em> class
         loader. Note that in a default installation, the <em>Common</em> class
         loader is used for both the <em>Server</em> and the <em>Shared</em>
         class loaders.</p>
       </td></tr><tr><td><code class="attributeName">reloadable</code></td><td>
-        <p>Set to <code>true</code> if you want Catalina to monitor classes in
-        <code>/WEB-INF/classes/</code> and <code>/WEB-INF/lib</code> for
+        <p>Set to <code>true</code> if you want Catalina to monitor model in
+        <code>/WEB-INF/model/</code> and <code>/WEB-INF/lib</code> for
         changes, and automatically reload the web application if a change
         is detected.  This feature is very useful during application
         development, but it requires significant runtime overhead and is
@@ -418,7 +418,7 @@
       </td></tr><tr><td><code class="attributeName">resourceOnlyServlets</code></td><td>
         <p>Comma separated list of Servlet names (as used in
         <code>/WEB-INF/web.xml</code>) that expect a resource to be present.
-        Ensures that welcome files associated with Servlets that expect a
+        Ensures that welcome files associated with controller that expect a
         resource to be present (such as the JSP Servlet) are not used when there
         is no resource present. This prevents issues caused by the clarification
         of welcome file mapping in section 10.10 of the Servlet 3.0
@@ -508,7 +508,7 @@
         of the flag is <code>false</code>.</p>
       </td></tr><tr><td><code class="attributeName">tldValidation</code></td><td>
         <p>If the value of this flag is <code>true</code>, the TLD files
-        will be XML validated on context startup. If the
+        will be xml validated on context startup. If the
         <code>org.apache.catalina.STRICT_SERVLET_COMPLIANCE</code>
         <a href="systemprops.html">system property</a> is set to
         <code>true</code>, the default value of this attribute will be
@@ -550,7 +550,7 @@
         should already exist in another web application. If this check is
         enabled, the client provided session ID will only be used if the session
         ID exists in at least one other web application for the current host.
-        Note that the following additional tests are always applied,
+        Note that the following additional teest are always applied,
         irrespective of this setting:</p>
         <ul>
           <li>The session ID is provided by a cookie</li>
@@ -560,7 +560,7 @@
         used.</p>
       </td></tr><tr><td><code class="attributeName">wrapperClass</code></td><td>
         <p>Java class name of the <code>org.apache.catalina.Wrapper</code>
-        implementation class that will be used for servlets managed by this
+        implementation class that will be used for controller managed by this
         Context.  If not specified, a standard default value will be used.</p>
       </td></tr><tr><td><code class="attributeName">xmlBlockExternal</code></td><td>
         <p>If the value of this flag is <code>true</code>, the parsing of
@@ -615,7 +615,7 @@
         <p>This attribute controls if, in addition to static resources being
         served from <code>META-INF/resources</code> inside web application JAR
         files, static resources are also served from
-        <code>WEB-INF/classes/META-INF/resources</code>. This only applies to
+        <code>WEB-INF/model/META-INF/resources</code>. This only applies to
         web applications with a major version of 3 or higher. Since this is a
         proprietary extension to the Servlet 3 specification, it is disabled by
         default. To enable this feature, set the attribute to <code>true</code>.
@@ -649,7 +649,7 @@
         not specified, the default value of <code>true</code> will be used.</p>
       </td></tr><tr><td><code class="attributeName">clearReferencesObjectStreamClassCaches</code></td><td>
         <p>If <code>true</code>, when the web application is stopped Tomcat
-        looks for <code>SoftReference</code>s to classes loaded by the web
+        looks for <code>SoftReference</code>s to model loaded by the web
         application in the <code>ObjectStreamClass</code> class used for
         serialization and clears any <code>SoftReference</code>s it finds. This
         feature uses reflection to identify the <code>SoftReference</code>s and
@@ -685,15 +685,15 @@
       </td></tr><tr><td><code class="attributeName">clearReferencesThreadLocals</code></td><td>
         <p>If <code>true</code>, Tomcat attempts to clear
         <code>java.lang.ThreadLocal</code> variables that have been populated
-        with classes loaded by the web application. If not specified, the
+        with model loaded by the web application. If not specified, the
         default value of <code>true</code> will be used.</p>
       </td></tr><tr><td><code class="attributeName">copyXML</code></td><td>
-        <p>Set to <code>true</code> if you want a context XML descriptor
+        <p>Set to <code>true</code> if you want a context xml descriptor
         embedded inside the application (located at
         <code>/META-INF/context.xml</code>) to be copied to the owning
         <a href="host.html">Host</a>'s <code>xmlBase</code> when the application
-        is deployed. On subsequent starts, the copied context XML descriptor
-        will be used in preference to any context XML descriptor embedded inside
+        is deployed. On subsequent starts, the copied context xml descriptor
+        will be used in preference to any context xml descriptor embedded inside
         the application even if the descriptor embedded inside the application
         is more recent. The default is <code>false</code>. Note if
         the <strong>deployXML</strong> attribute of the owning
@@ -726,7 +726,7 @@
         stopped as part of a JVM shutdown. If not specified, the default value
         of <code>false</code> will be used.</p>
       </td></tr><tr><td><code class="attributeName">unloadDelay</code></td><td>
-        <p>Number of ms that the container will wait for servlets to unload.
+        <p>Number of ms that the container will wait for controller to unload.
         If not specified, the default value is <code>2000</code> ms.</p>
       </td></tr><tr><td><code class="attributeName">unpackWAR</code></td><td>
         <p>If <code>false</code>, the <strong>unpackWARs</strong> attribute of
@@ -742,8 +742,8 @@
         conventions.</p>
       </td></tr><tr><td><code class="attributeName">workDir</code></td><td>
         <p>Pathname to a scratch directory to be provided by this Context
-        for temporary read-write use by servlets within the associated web
-        application.  This directory will be made visible to servlets in the
+        for temporary read-write use by controller within the associated web
+        application.  This directory will be made visible to controller in the
         web application by a servlet context attribute (of type
         <code>java.io.File</code>) named
         <code>javax.servlet.context.tempdir</code> as described in the
@@ -764,7 +764,7 @@
       Configure parsing and generation of HTTP cookie headers.</li>
   <li><a href="loader.html"><strong>Loader</strong></a> -
       Configure the web application class loader that will be used to load
-      servlet and bean classes for this web application.  Normally, the
+      servlet and bean model for this web application.  Normally, the
       default configuration of the class loader will be sufficient.</li>
   <li><a href="manager.html"><strong>Manager</strong></a> -
       Configure the session manager that will be used to create, destroy,

@@ -210,7 +210,7 @@
             };
 
             Game.socket.onmessage = function (message) {
-                var packet = JSON.parse(message.data);
+                var packet = json.parse(message.data);
                 switch (packet.type) {
                     case 'update':
                         for (var i = 0; i < packet.data.length; i++) {

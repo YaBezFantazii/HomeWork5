@@ -250,7 +250,7 @@ In CATALINA_BASE:
 
  * conf - Server configuration files (including server.xml)
 
- * lib  - Libraries and classes, as explained below
+ * lib  - Libraries and model, as explained below
 
  * logs - Log and output files
 
@@ -270,7 +270,7 @@ In CATALINA_HOME:
 
           setenv.sh (*nix), setenv.bat (Windows), tomcat-juli.jar
 
- * lib  - Libraries and classes, as explained below
+ * lib  - Libraries and model, as explained below
 
  * endorsed - Libraries that override standard "Endorsed Standards"
               libraries provided by JRE. See Classloading documentation
@@ -278,7 +278,7 @@ In CATALINA_HOME:
               This is only supported for Java <= 8.
               By default this "endorsed" directory is absent.
 
-In the default configuration the JAR libraries and classes both in
+In the default configuration the JAR libraries and model both in
 CATALINA_BASE/lib and in CATALINA_HOME/lib will be added to the common
 classpath, but the ones in CATALINA_BASE will be added first and thus will
 be searched first.
@@ -293,7 +293,7 @@ Classloading documentation in the User Guide for details.
 
 
 It might be useful to note that the values of CATALINA_HOME and
-CATALINA_BASE can be referenced in the XML configuration files processed
+CATALINA_BASE can be referenced in the xml configuration files processed
 by Tomcat as ${catalina.home} and ${catalina.base} respectively.
 
 For example, the standard manager web application can be kept in

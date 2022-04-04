@@ -156,7 +156,7 @@ guidelines will be useful:
 * 100 char line width for Java source, 80 char line width for documentation
 source (.txt, .xml)
 * Java source: { at end of line, 4 space indents
-* XML source: 2 space indents
+* xml source: 2 space indents
 
 ## Did we miss something?
 

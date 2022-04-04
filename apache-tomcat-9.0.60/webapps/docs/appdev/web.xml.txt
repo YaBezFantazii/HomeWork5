@@ -28,7 +28,7 @@
     <display-name>My Web Application</display-name>
     <description>
       This is version X.X of an application to perform
-      a wild and wonderful task, based on servlets and
+      a wild and wonderful task, based on controller and
       JSP pages.  It was written by Dave Developer
       (dave@mycompany.com), who should be contacted for
       more information.
@@ -62,17 +62,17 @@
     </context-param>
 
 
-    <!-- Servlet definitions for the servlets that make up
+    <!-- Servlet definitions for the controller that make up
          your web application, including initialization
          parameters.  With Tomcat, you can also send requests
-         to servlets not listed here with a request like this:
+         to controller not listed here with a request like this:
 
            http://localhost:8080/{context-path}/servlet/{classname}
 
          but this usage is not guaranteed to be portable.  It also
          makes relative references to images and other resources
          required by your servlet more complicated, so defining
-         all of your servlets (and defining a mapping to them with
+         all of your controller (and defining a mapping to them with
          a servlet-mapping element) is recommended.
 
          Servlet initialization parameters can be retrieved in a
@@ -84,7 +84,7 @@
          where "name" matches the <param-name> element of
          one of these initialization parameters.
 
-         You can define any number of servlets, including zero.
+         You can define any number of controller, including zero.
     -->
 
     <servlet>

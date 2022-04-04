@@ -1,4 +1,4 @@
-<%@ page import="Class.GameList" %>
+<%@ page import="model.GameList" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,10 +11,13 @@
     <form action="http://localhost:8080/gameplay" method="post">
         <input type="submit" value="Назад"/>
     </form>
-    <form action="DataBase" method="post">
+    <form action="dataBase" method="post">
+            <INPUT TYPE="radio" name="command" value="1"/>Общий рейтинг
             <p>Введите номер игры, который указан перед скобками:</p>
             <input type="text" name="id"/><br/><br/>
-            <input type="submit" value="Ввод"/>
+            <input type="submit" value="Принять"/>
+            <div>Номер игры - игрок1 - игрок2</div>
+            <div>-------------------------</div>
         </form>
         <%
                      ArrayList<String> GameList = (ArrayList<String>) request.getAttribute("GameList");
@@ -23,6 +26,11 @@
                                   out.println(GameList.get(i)+"<br>");
                                }
                        }
+
+                     if (request.getAttribute("rating")!="") {
+                        String rating = (String) request.getAttribute("rating");
+                        out.println("<h3>"+ rating +"</h3>");
+                      }
 
         %>
         <%

@@ -6,7 +6,7 @@
 
   <servlet>
     <servlet-name>rating</servlet-name>
-    <servlet-class>Servlets.Rating</servlet-class>
+    <servlet-class>controller.Rating</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>rating</servlet-name>
@@ -15,7 +15,7 @@
 
   <servlet>
     <servlet-name>gameArchive</servlet-name>
-    <servlet-class>Servlets.GameArchive</servlet-class>
+    <servlet-class>controller.GameArchive</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>gameArchive</servlet-name>
@@ -24,7 +24,7 @@
 
   <servlet>
     <servlet-name>nowGame</servlet-name>
-    <servlet-class>Servlets.NowGame</servlet-class>
+    <servlet-class>controller.NowGame</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>nowGame</servlet-name>
@@ -33,7 +33,7 @@
 
   <servlet>
     <servlet-name>playerNick</servlet-name>
-    <servlet-class>Servlets.PlayerNick</servlet-class>
+    <servlet-class>controller.PlayerNick</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>playerNick</servlet-name>
@@ -41,12 +41,12 @@
   </servlet-mapping>
 
   <servlet>
-    <servlet-name>DataBase</servlet-name>
-    <servlet-class>Servlets.DataBase</servlet-class>
+    <servlet-name>dataBase</servlet-name>
+    <servlet-class>controller.DataBase</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DataBase</servlet-name>
-    <url-pattern>/DataBase</url-pattern>
+    <servlet-name>dataBase</servlet-name>
+    <url-pattern>/dataBase</url-pattern>
   </servlet-mapping>
 
 </web-app>

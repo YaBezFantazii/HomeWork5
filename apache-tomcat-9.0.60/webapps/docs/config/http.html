@@ -8,7 +8,7 @@
   <p>The <strong>HTTP Connector</strong> element represents a
   <strong>Connector</strong> component that supports the HTTP/1.1 protocol.
   It enables Catalina to function as a stand-alone web server, in addition
-  to its ability to execute servlets and JSP pages.  A particular instance
+  to its ability to execute controller and JSP pages.  A particular instance
   of this component listens for connections on a specific TCP port number
   on the server.  One or more such <strong>Connectors</strong> can be
   configured as part of a single <a href="service.html">Service</a>, each
@@ -515,7 +515,7 @@
       When turning this value <code>true</code> you will want to set the
       <code>scheme</code> and the <code>secure</code> attributes as well
       to pass the correct <code>request.getScheme()</code> and
-      <code>request.isSecure()</code> values to the servlets
+      <code>request.isSecure()</code> values to the controller
       See <a href="#SSL_Support">SSL Support</a> for more information.
       </p>
     </td></tr><tr><td><code class="attributeName">tcpNoDelay</code></td><td>
@@ -984,7 +984,7 @@
 
   <p>You will also need to set the <code>scheme</code> and <code>secure</code>
   attributes to the values <code>https</code> and <code>true</code>
-  respectively, to pass correct information to the servlets.</p>
+  respectively, to pass correct information to the controller.</p>
 
   <p>The NIO and NIO2 connectors use either the JSSE Java SSL implementation or
   an OpenSSL implementation, whereas the APR/native connector uses OpenSSL only.

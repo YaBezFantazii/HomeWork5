@@ -12,8 +12,10 @@
     <%
                  String json = (String) request.getAttribute("json");
                  String xml = (String) request.getAttribute("xml");
-                 out.println( "<br>"+"Файл json сохранен по пути:"+json+"<br>" );
-                 out.println( "Файл xml сохранен по пути:"+xml+"<br>" );
+                 String result = (String) request.getAttribute("result");
+                 out.println( "<br>"+"Файл json сохранен по пути: "+json+"<br>" );
+                 out.println( "Файл xml сохранен по пути: "+xml+"<br>" );
+                 out.println( "Файл Result.txt расположен по пути: "+result+"<br>" );
 
                  String game = (String) request.getAttribute("game");
                  out.println( "<br>"+game );

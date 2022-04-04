@@ -30,11 +30,11 @@
 
 <html>
 <head>
-  <title>Example JSP in XML format</title>
+  <title>Example JSP in xml format</title>
 </head>
 
 <body>
-This is the output of a simple JSP using XML format.
+This is the output of a simple JSP using xml format.
 <br />
 
 <div>Use a jsp:scriptlet to loop from 1 to 10: </div>

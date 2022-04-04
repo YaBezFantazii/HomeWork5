@@ -707,7 +707,7 @@ for NSIS, however, are subject to the terms of the Common Public License version
 1.0.
 
 
-For the following XML Schemas for Java EE Deployment Descriptors:
+For the following xml Schemas for Java EE Deployment Descriptors:
  - javaee_5.xsd
  - javaee_web_services_1_2.xsd
  - javaee_web_services_client_1_2.xsd

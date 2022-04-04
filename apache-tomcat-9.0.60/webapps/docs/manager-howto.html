@@ -22,7 +22,7 @@ the following functions:</p>
 <li>List the currently deployed web applications, as well as the
     sessions that are currently active for those web apps.</li>
 <li>Reload an existing web application, to reflect changes in the
-    contents of <code>/WEB-INF/classes</code> or <code>/WEB-INF/lib</code>.
+    contents of <code>/WEB-INF/model</code> or <code>/WEB-INF/lib</code>.
     </li>
 <li>List the OS and JVM property values.</li>
 <li>List the available global JNDI resources, for use in deployment
@@ -141,9 +141,9 @@ Exactly how the usernames/passwords are configured depends on which
     &mdash; The <em>UserDatabaseRealm</em> and <em>MemoryUserDatabase</em> are
     configured in the default <code>$CATALINA_BASE/conf/server.xml</code>.
     Both <em>MemoryUserDatabase</em> and <em>MemoryRealm</em> read an
-    XML-format file by default stored at
+    xml-format file by default stored at
     <code>$CATALINA_BASE/conf/tomcat-users.xml</code>, which can be
-    edited with any text editor.  This file contains an XML
+    edited with any text editor.  This file contains an xml
     <code>&lt;user&gt;</code> for each individual user, which might
     look something like this:
 <div class="codeBox"><pre><code>&lt;user username="craigmcc" password="secret" roles="standard,manager-script" /&gt;</code></pre></div>
@@ -294,7 +294,7 @@ use of the <code>/undeploy</code> command.</p>
 <p>This command is executed by an HTTP PUT request.</p>
 
 <p>The .WAR file may include Tomcat specific deployment configuration, by
-including a Context configuration XML file in
+including a Context configuration xml file in
 <code>/META-INF/context.xml</code>.</p>
 
 <p>URL parameters include:</p>
@@ -333,7 +333,7 @@ error message.  Possible causes for problems include:</p>
     <p>An exception was encountered trying to start the new web application.
     Check the Tomcat logs for the details, but likely explanations include
     problems parsing your <code>/WEB-INF/web.xml</code> file, or missing
-    classes encountered when initializing application event listeners and
+    model encountered when initializing application event listeners and
     filters.</p>
     </li>
 </ul>
@@ -414,7 +414,7 @@ application using a Context configuration ".xml" file and an optional
 is not used when deploying a web application using a context ".xml"
 configuration file.</p>
 
-<p>A Context configuration ".xml" file can contain valid XML for a
+<p>A Context configuration ".xml" file can contain valid xml for a
 web application Context just as if it were configured in your
 Tomcat <code>server.xml</code> configuration file. Here is an
 example:</p>
@@ -452,7 +452,7 @@ Context path must match the directory name or war file name without the
 
 <p>For security when untrusted users can manage web applications, the
 Host deployXML flag can be set to false.  This prevents untrusted users
-from deploying web applications using a configuration XML file and
+from deploying web applications using a configuration xml file and
 also prevents them from deploying application directories or ".war"
 files located outside of their Host appBase.</p>
 
@@ -487,7 +487,7 @@ error message.  Possible causes for problems include:</p>
     <p>An exception was encountered trying to start the new web application.
     Check the Tomcat logs for the details, but likely explanations include
     problems parsing your <code>/WEB-INF/web.xml</code> file, or missing
-    classes encountered when initializing application event listeners and
+    model encountered when initializing application event listeners and
     filters.</p>
     </li>
 <li><em>Invalid application URL was specified</em>
@@ -541,7 +541,7 @@ after starting Tomcat might look like this:</p>
 
 <p>Signal an existing application to shut itself down and reload.  This can
 be useful when the web application context is not reloadable and you have
-updated classes or property files in the <code>/WEB-INF/classes</code>
+updated model or property files in the <code>/WEB-INF/model</code>
 directory or when you have added or updated jar files in the
 <code>/WEB-INF/lib</code> directory.
 </p>
@@ -570,7 +570,7 @@ error message.  Possible causes for problems include:</p>
     </p></li>
 <li><em>Reload not supported on WAR deployed at path /foo</em>
     <p>
-    Currently, application reloading (to pick up changes to the classes or
+    Currently, application reloading (to pick up changes to the model or
     <code>web.xml</code> file) is not supported when a web application is
     deployed directly from a WAR file.  It only works when the web application
     is deployed from an unpacked directory.  If you are using a WAR file,
@@ -759,7 +759,7 @@ application artifacts that exist within <code>appBase</code> directory
 (typically "webapps") for this virtual host</strong>.
 This will delete the application .WAR, if present,
 the application directory resulting either from a deploy in unpacked form
-or from .WAR expansion as well as the XML Context definition from
+or from .WAR expansion as well as the xml Context definition from
 <code>$CATALINA_BASE/conf/[enginename]/[hostname]/</code> directory.
 If you simply want to take an application
 out of service, you should use the <code>/stop</code> command instead.</p>
@@ -823,7 +823,7 @@ GC, you will need to check using tools like GC logging, JConsole or similar.</p>
 <code>true</code>.</p>
 
 <p>Each context path for a web application that was stopped, reloaded or
-undeployed, but which classes from the previous runs are still loaded in memory,
+undeployed, but which model from the previous runs are still loaded in memory,
 thus causing a memory leak, will be listed on a new line. If an application
 has been reloaded several times, it may be listed several times.</p>
 
@@ -993,10 +993,10 @@ http://localhost:8080/manager/status/all</code></pre></div>
 
 <p>Displays server status information in HTML format.</p>
 
-<div class="codeBox"><pre><code>http://localhost:8080/manager/status?XML=true
-http://localhost:8080/manager/status/all?XML=true</code></pre></div>
+<div class="codeBox"><pre><code>http://localhost:8080/manager/status?xml=true
+http://localhost:8080/manager/status/all?xml=true</code></pre></div>
 
-<p>Displays server status information in XML format.</p>
+<p>Displays server status information in xml format.</p>
 
 <p>First, you have the server and JVM version number, JVM provider, OS name
 and number followed by the architecture type.</p>
@@ -1068,7 +1068,7 @@ on each of deployed web applications will be available.</p>
       </li>
       <li>
         <code>qry=*%3Aj2eeType=Servlet%2c* --&gt;
-            j2eeType=Servlet</code> which return all loaded servlets.
+            j2eeType=Servlet</code> which return all loaded controller.
       </li>
       <li>
         <code>qry=Catalina%3Atype%3DEnvironment%2Cresourcetype%3DGlobal%2Cname%3DsimpleValue --&gt;

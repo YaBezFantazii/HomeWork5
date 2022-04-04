@@ -84,7 +84,7 @@
         request by jackshirazi. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://github.com/apache/tomcat/pull/469">#469</a>: Include the Java Annotations API in the classes that
+        <a href="https://github.com/apache/tomcat/pull/469">#469</a>: Include the Java Annotations API in the model that
         Tomcat will not load from web applications. Pull request provided by
         ppkarwasz. (markt)
       </li>
@@ -100,7 +100,7 @@
         resources with an error. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Improve the format of WebDAV XML responses to make them easier for
+        Improve the format of WebDAV xml responses to make them easier for
         humans to read. The change ensures that there is always a line break
         before starting a new element. (markt)
       </li>
@@ -451,7 +451,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Switch from Cobertura to JaCoCo for code coverage as Cobertura does not
         support code coverage for code compiled for Java 11 onwards. It also
-        removes the need to use a single thread to run the tests. (markt)
+        removes the need to use a single thread to run the teest. (markt)
       </li>
     </ul>
   </div></div>
@@ -643,9 +643,9 @@
   <div class="subsection"><h4 id="Tomcat_9.0.53_(remm)/Catalina">Catalina</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Enable Tomcat to start if an (old) XML parser is configured that does
+        Enable Tomcat to start if an (old) xml parser is configured that does
         not support <code>allow-java-encodings</code>. A warning will be logged
-        if such an XML parser is detected. (markt)
+        if such an xml parser is detected. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Change the behaviour of custom error pages. If an error occurs after the
@@ -670,7 +670,7 @@
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
         Improve the reusability of the <code>UserDatabase</code> by adding
-        intermediate concrete implementation classes and allowing to do
+        intermediate concrete implementation model and allowing to do
         partial database updates on <code>save</code>. (remm)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -795,7 +795,7 @@
     <ul class="changelog">
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65476">65476</a>: Correct an error in some code clean-up that mean that
-        web application classes were not configured with the correct package.
+        web application model were not configured with the correct package.
         (markt)
       </li>
     </ul>
@@ -903,7 +903,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.50_(remm)/Jasper">Jasper</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Jakarta to Javax backport issue in tests. (remm)
+        Jakarta to Javax backport issue in teest. (remm)
       </li>
     </ul>
   </div></div>
@@ -916,7 +916,7 @@
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Refactor <code>JNDIRealm$JNDIConnection</code> so its fields are
-        accessible to sub-classes of <code>JNDIRealm</code>. (markt)
+        accessible to sub-model of <code>JNDIRealm</code>. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Fix serialization warnings in <code>UserDatabasePrincipal</code>
@@ -982,7 +982,7 @@
         instead of treating the presence of empty elements as an error. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Expand the unit tests for <code>HttpServlet.doHead()</code> and correct
+        Expand the unit teest for <code>HttpServlet.doHead()</code> and correct
         the flushing of the response buffer. The buffer used to behave as if it
         was one byte smaller than the configured size. The buffer was flushed
         (and the response committed if required) when the buffer was full. The
@@ -1079,7 +1079,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.48_(remm)/Coyote">Coyote</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Regression when generating reflection due to removed NIO classes
+        Regression when generating reflection due to removed NIO model
         in 9.0.47. (remm)
       </li>
     </ul>
@@ -1300,7 +1300,7 @@
         the default <code>HTTP/1.1</code> protocol. (rjung/remm)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
-        Expand coverage of unit tests for JNDIRealm using the UnboundID LDAP SDK
+        Expand coverage of unit teest for JNDIRealm using the UnboundID LDAP SDK
         for Java. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -1312,7 +1312,7 @@
         for the <code>RemoteIpValve</code>. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65244">65244</a>: HandlesTypes should include classes that use
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=65244">65244</a>: HandlesTypes should include model that use
         the specified annotation types on fields or methods. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -1367,7 +1367,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Allow the JSP configuration option
         <code>useInstanceManagerForTags</code> to be used with Tags that are
-        implemented as inner classes. (markt)
+        implemented as inner model. (markt)
       </li>
     </ul>
   </div></div>
@@ -1951,16 +1951,16 @@
         Fix unwanted JPMS dependency of embed-core on embed-jasper</a>. (mgrigorov)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Add org.apache.coyote.http11.Http11Nio2Protocol to the list of classes which could be instantiated
+        Add org.apache.coyote.http11.Http11Nio2Protocol to the list of model which could be instantiated
         via reflection in GraalVM. (mgrigorov)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         Add <code>JsonErrorReportValve</code> that extends the
-        <code>ErrorReportValve</code> that returns  response as JSON instead of
+        <code>ErrorReportValve</code> that returns  response as json instead of
         HTML. (kfujino)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Add GraalVM config for Tomcat JNI related classes. This makes it
+        Add GraalVM config for Tomcat JNI related model. This makes it
         possible to use the APR protocol in GraalVM native images.
         To use it add the following to the native-image arguments:
         <code>-H:JNIConfigurationResources=META-INF/native-image/org.apache.tomcat.embed/tomcat-embed-core/tomcat-jni.json</code>
@@ -2312,7 +2312,7 @@
         opportunity to rewrite the request. (remm/markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Change top package name for generated embedded classes to avoid
+        Change top package name for generated embedded model to avoid
         conflict with default host name on case insensitive filesystems.
         (remm)
       </li>
@@ -2569,12 +2569,12 @@
         <code>400</code> response. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Add generated classes using Tomcat embedded as an optional replacement
+        Add generated model using Tomcat embedded as an optional replacement
         for the Catalina configuration files. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64541">64541</a>: Refactor the DTD used to validate
-        <code>mbeans-descriptors.xml</code> files to avoid issues when XML
+        <code>mbeans-descriptors.xml</code> files to avoid issues when xml
         entity expansion is limited or disabled. (markt)
       </li>
     </ul>
@@ -2663,7 +2663,7 @@
         provided by Raymond Aug&eacute;. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64521">64521</a>: Avoid moving i18n translations into classes dir since
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64521">64521</a>: Avoid moving i18n translations into model dir since
         they are packaged into separate jars. Pull request provided by Raymond
         Aug&eacute;. (markt)
       </li>
@@ -2763,7 +2763,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64488">64488</a>: Ensure that the ImportHandler from the Expression
-        Language API is able to load classes from the Java runtime when running
+        Language API is able to load model from the Java runtime when running
         under a SecurityManager. Based on a patch by Volodymyr Siedleck. (markt)
       </li>
     </ul>
@@ -2901,13 +2901,13 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64373">64373</a>: When a tag file is packaged in a WAR and then that WAR
-        is unpacked in <code>/WEB-INF/classes</code> ensure that the tag file
+        is unpacked in <code>/WEB-INF/model</code> ensure that the tag file
         can still be found. Patch provided by Karl von Randow. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that the Jasper code that interfaces with the Eclipse Compiler
         for Java (ECJ) enables Jasper to compile JSPs using ECJ 4.14 onwards
-        when the JSPs have inner classes. (markt)
+        when the JSPs have inner model. (markt)
       </li>
     </ul>
   </div></div>
@@ -3378,7 +3378,7 @@
         that will be used. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        SCI definitions from JARs unpacked into <code>WEB-INF/classes</code> are
+        SCI definitions from JARs unpacked into <code>WEB-INF/model</code> are
         now handled consistently and will always be found irrespective of
         whether the web application defines a JAR ordering or not. (markt)
       </li>
@@ -3408,7 +3408,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=64089">64089</a>: Add <code>${...}</code> property replacement support
-        to XML external entity definitions. (markt)
+        to xml external entity definitions. (markt)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Deprecate <code>MappingData.contextPath</code> as it is unused. (markt)
@@ -3920,10 +3920,10 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63838">63838</a>: Suppress reflexive access warnings when running the
-        unit tests on the command line. (markt)
+        unit teest on the command line. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Add missing charsets from the HPE JVM on HP-UX to pass unit tests in
+        Add missing charsets from the HPE JVM on HP-UX to pass unit teest in
         <code>org.apache.tomcat.util.buf.TestCharsetCache</code>. (michaelo)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
@@ -3991,7 +3991,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63781">63781</a>: When performing various checks related to the
-        visibility of classes, fields an methods in the EL implementation, also
+        visibility of model, fields an methods in the EL implementation, also
         check that the containing module has been exported. (markt)
       </li>
     </ul>
@@ -4036,7 +4036,7 @@
     <ul class="changelog">
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Deprecate <code>org.apache.tomcat.util.compat.TLS</code>.
-        Its functionality was only used for unit tests in
+        Its functionality was only used for unit teest in
         <code>org.apache.tomcat.util.net.TesterSupport</code>
         and has been moved there. (rjung)
       </li>
@@ -4069,7 +4069,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Re-tagged to ensure that the source file for the changelog did not
-        contain an XML byte order mark. (markt)
+        contain an xml byte order mark. (markt)
       </li>
     </ul>
   </div></div>
@@ -4448,7 +4448,7 @@
         Add "embed" to the <code>Bundle-Name</code> and
         <code>Bundle-Symbolic-Name</code> for the Tomcat embedded WebSocket JAR
         to align the naming with the other embedded JARs and to differentiate it
-        from the standard WebSocket JAR that does not include the API classes.
+        from the standard WebSocket JAR that does not include the API model.
         (markt)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
@@ -4826,7 +4826,7 @@
         in compatible class. Identified by Coverity scan. (markt)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
-        Refactor <code>ManagerServlet</code> to avoid loading classes when
+        Refactor <code>ManagerServlet</code> to avoid loading model when
         filtering JNDI resources for resources of a specified type. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -5060,8 +5060,8 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63311">63311</a>: Add support for https URLs to the local resolver within
-        Tomcat used to resolve standard XML DTDs and schemas when Tomcat is
-        configured to validate XML configuration files such as web.xml. (markt)
+        Tomcat used to resolve standard xml DTDs and schemas when Tomcat is
+        configured to validate xml configuration files such as web.xml. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Encode the output of the SSI <code>printenv</code> command. This is the
@@ -5333,7 +5333,7 @@
     <ul class="changelog">
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Remove the <code>STREAMS_DROP_EMPTY_MESSAGES</code> system property that
-        was introduced to work-around four failing TCK tests. An alternative
+        was introduced to work-around four failing TCK teest. An alternative
         solution has been implemented. Sending messages via
         <code>getSendStream()</code> and <code>getSendWriter()</code> will now
         only result in messages on the wire if data is written to the
@@ -5570,7 +5570,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=63137">63137</a>: If the resources for a web application have been
         configured with multiple locations mapped to
-        <code>/WEB-INF/classes</code>, ensure that all of those locations are
+        <code>/WEB-INF/model</code>, ensure that all of those locations are
         used when building the web application class path. Patch provided by
         Marcin Gołębski. (markt)
       </li>
@@ -5992,8 +5992,8 @@
         build file for it. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Add XML Namespace to the project element of all POM files so that the
-        XML files are Well Formed and Valid. (csutherl)
+        Add xml Namespace to the project element of all POM files so that the
+        xml files are Well Formed and Valid. (csutherl)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=53930">53930</a>: Add support for the <code>CATALINA_OUT_CMD</code>
@@ -6015,7 +6015,7 @@
     <ul class="changelog">
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58590">58590</a>: Add the ability for a UserDatabase to monitor the
-        backing XML file for changes and reload the source file if a change in
+        backing xml file for changes and reload the source file if a change in
         the last modified time is detected. This is enabled by default meaning
         that changes to <code>$CATALINA_BASE/conf/tomcat-users.xml</code> will
         now take effect a short time after the file is saved. (markt)
@@ -6164,7 +6164,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.13_(markt)/Jasper">Jasper</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Correct parsing of XML whitespace in TLD function signatures that
+        Correct parsing of xml whitespace in TLD function signatures that
         incorrectly only looked for the space character. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -6270,7 +6270,7 @@
         Added ant target ide-intellij to create an IntelliJ IDEA project. (isapir)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Utility JSON parser generated from a public domain javacc grammar
+        Utility json parser generated from a public domain javacc grammar
         written by Robert Fischer. (remm)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
@@ -6289,7 +6289,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=62664">62664</a>: Process requests with content type
-        <code>multipart/form-data</code> to servlets with a
+        <code>multipart/form-data</code> to controller with a
         <code>@MultipartConfig</code> annotation regardless of HTTP method.
         (markt)
       </li>
@@ -7045,7 +7045,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=51195">51195</a>: Avoid a false positive report of a web application
-        memory leak by clearing <code>ObjectStreamClass$Caches</code> of classes
+        memory leak by clearing <code>ObjectStreamClass$Caches</code> of model
         loaded by the web application when the web application is stopped.
         (markt)
       </li>
@@ -7381,7 +7381,7 @@
         <code>null</code> is returned when <code>toString()</code> is called
         both on newly created objects and immediately after a call to
         <code>recycle()</code>. This should not impact typical Tomcat users. It
-        may impact users who use these classes directly in their own code.
+        may impact users who use these model directly in their own code.
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -7390,7 +7390,7 @@
         consistently and do not throw a <code>NullPointerException</code> both
         on newly created objects and immediately after a call to
         <code>recycle()</code>. This should not impact typical Tomcat users. It
-        may impact users who use these classes directly in their own code.
+        may impact users who use these model directly in their own code.
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -7537,7 +7537,7 @@
         Add some missing NPEs to ServletContext. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Update the Java EE 8 XML schema to the released versions. (markt)
+        Update the Java EE 8 xml schema to the released versions. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Minor HTTP/2 push fixes. (remm)
@@ -7552,16 +7552,16 @@
         When using WebDAV to copy a file resource to a destination that requires
         a collection to be overwritten, ensure that the operation succeeds
         rather than fails (with a 500 response). This enables Tomcat to pass two
-        additional tests from the Litmus WebDAV test suite. (markt)
+        additional teest from the Litmus WebDAV test suite. (markt)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
-        Modify the Default and WebDAV Servlets so that a 405 status code is
+        Modify the Default and WebDAV controller so that a 405 status code is
         returned for <code>PUT</code> and <code>DELETE</code> requests when
         disabled via the <code>readonly</code> initialisation parameter.
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Align the contents of the <code>Allow</code> header with the response
-        code for the Default and WebDAV Servlets. For any given resource a
+        code for the Default and WebDAV controller. For any given resource a
         method that returns a 405 status code will not be listed in the
         <code>Allow</code> header and a method listed in the <code>Allow</code>
         header will not return a 405 status code. (markt)
@@ -7886,7 +7886,7 @@
         Enable Javadoc to be built with Java 9. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61603">61603</a>: Add XML filtering for the status servlet output where
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61603">61603</a>: Add xml filtering for the status servlet output where
         needed. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -8283,7 +8283,7 @@
         (rjung)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61439">61439</a>: Remove the Java Annotation API classes from
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61439">61439</a>: Remove the Java Annotation API model from
         tomcat-embed-core.jar and package them in a separate JAR in the
         embedded distribution to provide end users with greater flexibility to
         handle potential conflicts with the JRE and/or other JARs. (markt)
@@ -8490,7 +8490,7 @@
         encoding. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61214">61214</a>: Remove deleted attribute <code>servlets</code> from
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=61214">61214</a>: Remove deleted attribute <code>controller</code> from
         the Context MBean description. Patch provided by Alexis Hassler. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -8835,7 +8835,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.0.M21_(markt)/General">General</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        Allow to exclude JUnit test classes using the build property
+        Allow to exclude JUnit test model using the build property
         <code>test.exclude</code> and document the property in
         BUILDING.txt. (rjung)
       </li>
@@ -8876,7 +8876,7 @@
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Ensure that when the Default or WebDAV servlets process an error
+        Ensure that when the Default or WebDAV controller process an error
         dispatch that the error resource is processed via the
         <code>doGet()</code> method irrespective of the method used for the
         original request that triggered the error. (markt)
@@ -9027,7 +9027,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=47214">47214</a>: Refactor code so that explicitly referenced inner
-        classes are given explicit names rather than being anonymous. (markt)
+        model are given explicit names rather than being anonymous. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59825">59825</a>: Log a message that lists the components in the
@@ -9049,7 +9049,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Avoid potential <code>NullPointerException</code>s related to access
         logging during shutdown, some of which have been observed when running
-        the unit tests. (markt)
+        the unit teest. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         When there is no <code>javax.servlet.WriteListener</code> registered
@@ -9080,7 +9080,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=47214">47214</a>: Refactor code so that explicitly referenced inner
-        classes are given explicit names rather than being anonymous. (markt)
+        model are given explicit names rather than being anonymous. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60925">60925</a>: Improve the handling of access to properties defined
@@ -9289,7 +9289,7 @@
         feature is disabled on connector. (kkolinko)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
-        Make it easier for sub-classes of <code>Tomcat</code> to modify the
+        Make it easier for sub-model of <code>Tomcat</code> to modify the
         default web.xml settings by over-riding
         <code>getDefaultWebXmlListener()</code>. Patch provided by Aaron
         Anderson. (markt)
@@ -9324,7 +9324,7 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60697">60697</a>: When HTTP TRACE requests are disabled on the
-        Connector, ensure that the HTTP OPTIONS response from custom servlets
+        Connector, ensure that the HTTP OPTIONS response from custom controller
         does not include TRACE in the returned Allow header. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -9477,7 +9477,7 @@
         released and destroyed once used. (remm, violetagg)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60769">60769</a>: Correct a regression in the XML encoding detection
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60769">60769</a>: Correct a regression in the xml encoding detection
         refactoring carried out for 9.0.0.M16 that incorrectly always used the
         detected BOM encoding in preference to any encoding specified in the
         prolog. (markt)
@@ -9546,7 +9546,7 @@
         pick up the latest Windows binaries built with OpenSSL 1.0.2k. (violetagg)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60784">60784</a>: Update all unit tests that test the HTTP status line
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60784">60784</a>: Update all unit teest that test the HTTP status line
         to check for the required space after the status code. Patch provided by
         Michael Osipov. (markt)
       </li>
@@ -9667,7 +9667,7 @@
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Correct a regression in the refactoring to make wider use of
         <code>ByteBuffer</code> that caused an intermittent failure in the unit
-        tests. (markt)
+        teest. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60482">60482</a>: HTTP/2 shouldn't do URL decoding on the query string.
@@ -9691,8 +9691,8 @@
   <div class="subsection"><h4 id="Tomcat_9.0.0.M16_(markt)/Jasper">Jasper</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Update: " class="icon" src="./images/update.gif">
-        Implement a simpler JSP file encoding detector that delegates XML prolog
-        encoding detection to the JRE rather than using a custom XML parser.
+        Implement a simpler JSP file encoding detector that delegates xml prolog
+        encoding detection to the JRE rather than using a custom xml parser.
         (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -9720,7 +9720,7 @@
         bundle with the correct line endings. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60467">60467</a>: remove problematic characters from XML documentation.
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=60467">60467</a>: remove problematic characters from xml documentation.
         Based upon a patch by Michael Osipov. (schultz)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -9826,7 +9826,7 @@
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
         Remove the <code>getName()</code> method from <code>RealmBase</code>
-        along with the various constants used by the sub-classes to store the
+        along with the various constants used by the sub-model to store the
         return value. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -9993,7 +9993,7 @@
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
         New property is added <code>test.verbose</code> in order to control
-        whether the output of the tests is displayed on the console or not.
+        whether the output of the teest is displayed on the console or not.
         Patch provided by Emmanuel Bourg. (violetagg)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
@@ -10190,7 +10190,7 @@
         Add the JASPIC API jar to the Maven Central publication script. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Remove classes from tomcat-util-scan.jar that are duplicates of those in
+        Remove model from tomcat-util-scan.jar that are duplicates of those in
         tomcat-util.jar. (markt)
       </li>
       <li><img alt="Add: " class="icon" src="./images/add.gif">
@@ -10395,7 +10395,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.0.M10_(markt)/Catalina">Catalina</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59813">59813</a>: Ensure that circular relations of the Class-Path
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59813">59813</a>: Ensure that circular relations of the model-Path
         attribute from JAR manifests will be processed correctly. (violetagg)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -10450,9 +10450,9 @@
         is provided by Terence Bandoian. (violetagg)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59866">59866</a>: When scanning <code>WEB-INF/classes</code> for
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59866">59866</a>: When scanning <code>WEB-INF/model</code> for
         annotations, don't scan the contents of
-        <code>WEB-INF/classes/META-INF</code> (if present) since classes will
+        <code>WEB-INF/model/META-INF</code> (if present) since model will
         never be loaded from that location. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -10601,7 +10601,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         When writing out a full web.xml file with JspC ensure that the encoding
-        used in the XML prolog matches the encoding used to write the contents
+        used in the xml prolog matches the encoding used to write the contents
         of the file. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -10959,7 +10959,7 @@
         assumption is not always valid, e.g. on z/OS. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59608">59608</a>: Skip over any invalid <code>Class-Path</code> attribute
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59608">59608</a>: Skip over any invalid <code>model-Path</code> attribute
         from JAR manifests. Log errors at debug level due to many bad libraries.
         (remm)
       </li>
@@ -11016,7 +11016,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59567">59567</a>: Fix NPE scanning webapps for TLDs when an exploded
-        JAR has an empty WEB-INF/classes/META-INF folder. (remm)
+        JAR has an empty WEB-INF/model/META-INF folder. (remm)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Fix a memory leak in the expression language implementation that caused
@@ -11080,7 +11080,7 @@
         additional fixes). (markt)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
-        Use UTF-8 with a standard prolog for all XML files. (markt)
+        Use UTF-8 with a standard prolog for all xml files. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=58626">58626</a>: Add support for a new environment variable
@@ -11145,7 +11145,7 @@
         committed. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59226">59226</a>: Process the <code>Class-Path</code> attribute from
+        <a href="https://bz.apache.org/bugzilla/show_bug.cgi?id=59226">59226</a>: Process the <code>model-Path</code> attribute from
         JAR manifests for JARs on the class path excluding JARs packaged in
         <code>WEB-INF/lib</code>. (markt)
       </li>
@@ -11233,8 +11233,8 @@
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         Ensure that <code>JarScanner</code> only uses the explicit call-back to
-        process <code>WEB-INF/classes</code> and only when configured to treat
-        the contents of <code>WEB-INF/classes</code> as a possible exploded JAR.
+        process <code>WEB-INF/model</code> and only when configured to treat
+        the contents of <code>WEB-INF/model</code> as a possible exploded JAR.
         (markt)
       </li>
       <li><img alt="Code: " class="icon" src="./images/code.gif">
@@ -11356,7 +11356,7 @@
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
         When scanning JARs for TLDs, correctly handle the (rare) case where a
-        JAR has been exploded into <code>WEB-INF/classes</code> and the web
+        JAR has been exploded into <code>WEB-INF/model</code> and the web
         application is deployed as a packed WAR. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
@@ -11494,7 +11494,7 @@
   <div class="subsection"><h4 id="Tomcat_9.0.0.M4_(markt)/Catalina">Catalina</h4><div class="text">
     <ul class="changelog">
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Ensure that <code>/WEB-INF/classes</code> is never processed as a web
+        Ensure that <code>/WEB-INF/model</code> is never processed as a web
         fragment. (markt)
       </li>
       <li><img alt="Update: " class="icon" src="./images/update.gif">
@@ -11941,7 +11941,7 @@
         Jacopo Cappellato. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">
-        Add the <code>StatusManagerServlet</code> to the list of Servlets that
+        Add the <code>StatusManagerServlet</code> to the list of controller that
         can only be loaded by privileged applications. (markt)
       </li>
       <li><img alt="Fix: " class="icon" src="./images/fix.gif">

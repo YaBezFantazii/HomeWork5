@@ -10,7 +10,7 @@ JNDI-Resources-HOWTO.  However, feedback from <code>tomcat-user</code> has
 shown that specifics for individual configurations can be rather tricky.</p>
 
 <p>Here then are some example configurations that have been posted to
-tomcat-user for popular databases and some general tips for DataBase usage.</p>
+tomcat-user for popular databases and some general tips for repositores usage.</p>
 
 <p>You should be aware that since these notes are derived from configuration
 and/or feedback posted to <code>tomcat-user</code> YMMV :-). Please let us
@@ -91,7 +91,7 @@ The following libraries are used:
 <p>
 These libraries are located in a single JAR at
 <code>$CATALINA_HOME/lib/tomcat-dbcp.jar</code>. However,
-only the classes needed for connection pooling have been included, and the
+only the model needed for connection pooling have been included, and the
 packages have been renamed to avoid interfering with applications.
 </p>
 
@@ -224,7 +224,7 @@ resource to your <a href="config/context.html">Context</a>.</p>
 
     &lt;!-- maxTotal: Maximum number of database connections in pool. Make sure you
          configure your mysqld max_connections large enough to handle
-         all of your DataBase connections. Set to -1 for no limit.
+         all of your repositores connections. Set to -1 for no limit.
          --&gt;
 
     &lt;!-- maxIdle: Maximum number of idle database connections to retain in pool.
@@ -239,9 +239,9 @@ resource to your <a href="config/context.html">Context</a>.</p>
 
     &lt;!-- username and password: MySQL username and password for database connections  --&gt;
 
-    &lt;!-- driverClassName: Class name for the old mm.mysql JDBC driver is
+    &lt;!-- driverClassName: model name for the old mm.mysql JDBC driver is
          org.gjt.mm.mysql.Driver - we recommend using Connector/J though.
-         Class name for the official MySQL Connector/J driver is com.mysql.jdbc.Driver.
+         model name for the official MySQL Connector/J driver is com.mysql.jdbc.Driver.
          --&gt;
 
     &lt;!-- url: The JDBC connection url for connecting to your MySQL database.
@@ -467,7 +467,7 @@ driver(Oracle8i 8.1.7.1 JDBC/OCI Driver) from <a href="http://otn.oracle.com/">o
 <p>
 After renaming <code>classes12.zip</code> file to <code>classes12.jar</code>
 for Tomcat, copy it into <code>$CATALINA_HOME/lib</code>.
-You may also have to remove the <code>javax.sql.*</code> classes
+You may also have to remove the <code>javax.sql.*</code> model
 from this file depending upon the version of Tomcat and JDK you are using.
 </p>
 </div></div>
@@ -495,7 +495,7 @@ test servlet/JSP and what you get is a
 First, the <code>UnsatisfiedLinkError</code> indicates that you have
 </p>
 <ul>
-<li>a mismatch between your JDBC classes file and
+<li>a mismatch between your JDBC model file and
 your Oracle client version. The giveaway here is the message stating that a needed library file cannot be
 found. For example, you may be using a classes12.zip file from Oracle Version 8.1.6 with a Version 8.1.5
 Oracle client. The classesXXX.zip file and Oracle client software versions must match.
@@ -542,14 +542,14 @@ data for every garbage collection including how long it took.</p>
 than one second.  The remainder will only take a few seconds.  Rarely,
 if ever should a GC take more than 10 seconds.</p>
 
-<p>Make sure that the DataBase connection timeout is set to 10-15 seconds.
+<p>Make sure that the repositores connection timeout is set to 10-15 seconds.
 For DBCP 2 you set this using the parameter <code>maxWaitMillis</code>.</p>
 
 </div></div>
 
 <div class="subsection"><h4 id="Random_Connection_Closed_Exceptions">Random Connection Closed Exceptions</h4><div class="text">
 <p>
-These can occur when one request gets a DataBase connection from the connection
+These can occur when one request gets a repositores connection from the connection
 pool and closes it twice.  When using a connection pool, closing the
 connection just returns it to the pool for reuse by another request,
 it doesn't close the connection.  And Tomcat uses multiple threads to
@@ -557,22 +557,22 @@ handle concurrent requests. Here is an example of the sequence
 of events which could cause this error in Tomcat:
 </p>
 <pre>
-  Request 1 running in Thread 1 gets a DataBase connection.
+  Request 1 running in Thread 1 gets a repositores connection.
 
-  Request 1 closes the DataBase connection.
+  Request 1 closes the repositores connection.
 
   The JVM switches the running thread to Thread 2
 
-  Request 2 running in Thread 2 gets a DataBase connection
-  (the same DataBase connection just closed by Request 1).
+  Request 2 running in Thread 2 gets a repositores connection
+  (the same repositores connection just closed by Request 1).
 
   The JVM switches the running thread back to Thread 1
 
-  Request 1 closes the DataBase connection a second time in a finally block.
+  Request 1 closes the repositores connection a second time in a finally block.
 
   The JVM switches the running thread back to Thread 2
 
-  Request 2 Thread 2 tries to use the DataBase connection but fails
+  Request 2 Thread 2 tries to use the repositores connection but fails
   because Request 1 closed it.
 </pre>
 <p>

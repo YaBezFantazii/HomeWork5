@@ -16,7 +16,7 @@
   limitations under the License.
 -->
 <!--
-  XML file for importing Catalina ant tasks.
+  xml file for importing Catalina ant tasks.
   <import file="${catalina.home}/bin/catalina-tasks.xml"/>
 -->
 

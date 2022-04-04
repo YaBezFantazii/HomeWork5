@@ -16,7 +16,7 @@
 Tomcat Startup Sequence
 
 Sequence 1. Start from Command Line
-Class: org.apache.catalina.startup.Bootstrap
+model: org.apache.catalina.startup.Bootstrap
 What it does:
     a) Set up classloaders
         commonLoader (common)-> System Loader
@@ -31,7 +31,7 @@ What it does:
     c) Bootstrap.daemon.init() complete
 
 Sequence 2. Process command line argument (start, stop)
-Class: org.apache.catalina.startup.Bootstrap (assume command->start)
+model: org.apache.catalina.startup.Bootstrap (assume command->start)
 What it does:
     a) Catalina.setAwait(true);
     b) Catalina.load()
@@ -61,7 +61,7 @@ What it does:
                 ContextRuleSet
         b4) Load the server.xml and parse it using the digester
             Parsing the server.xml using the digester is an automatic
-            XML-object mapping tool, that will create the objects defined in server.xml
+            xml-object mapping tool, that will create the objects defined in server.xml
             Startup of the actual container has not started yet.
         b5) Assigns System.out and System.err to the SystemLogHandler class
         b6) Calls initialize on all components, this makes each object register itself with the
@@ -81,7 +81,7 @@ What it does:
                 errors codes
                 Starts the Valves in the pipeline (at least the ErrorReportValve)
                 Configures the StandardHostValve,
-                    this valves ties the Webapp Class loader to the thread context
+                    this valves ties the Webapp model loader to the thread context
                     it also finds the session for the request
                     and invokes the context pipeline
                 Starts the HostConfig component

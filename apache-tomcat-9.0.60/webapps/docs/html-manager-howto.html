@@ -72,8 +72,8 @@ the following is displayed:</p>
         <li><strong>Stop</strong> - Stop a web application which is currently
             running and make it unavailable.</li>
         <li><strong>Reload</strong> - Reload the web application so that new
-            ".jar" files in <code>/WEB-INF/lib/</code> or new classes in
-            <code>/WEB-INF/classes/</code> can be used.</li>
+            ".jar" files in <code>/WEB-INF/lib/</code> or new model in
+            <code>/WEB-INF/model/</code> can be used.</li>
         <li><strong>Undeploy</strong> - Stop and then remove this web
              application from the server.</li>
       </ul>
@@ -155,7 +155,7 @@ error message.  Possible causes for problems include:</p>
 
 <p>Signal an existing application to shut itself down and reload.  This can
 be useful when the web application context is not reloadable and you have
-updated classes or property files in the <code>/WEB-INF/classes</code>
+updated model or property files in the <code>/WEB-INF/model</code>
 directory or when you have added or updated jar files in the
 <code>/WEB-INF/lib</code> directory.
 </p>
@@ -191,7 +191,7 @@ error message.  Possible causes for problems include:</p>
     <p>The <code>path</code> parameter is required.</p>
     </li>
 <li><em>Reload not supported on WAR deployed at path /foo</em>
-    <p>Currently, application reloading (to pick up changes to the classes or
+    <p>Currently, application reloading (to pick up changes to the model or
     <code>web.xml</code> file) is not supported when a web application is
     installed directly from a WAR file, which happens when the host is
     configured to not unpack WAR files. As it only works when the web
@@ -320,7 +320,7 @@ application using a Context configuration ".xml" file and an optional
 is not used when installing a web application using a context ".xml"
 configuration file.</p>
 
-<p>A Context configuration ".xml" file can contain valid XML for a
+<p>A Context configuration ".xml" file can contain valid xml for a
 web application Context just as if it were configured in your
 Tomcat <code>server.xml</code> configuration file. Here is an
 example for Tomcat running on Windows:</p>
@@ -334,13 +334,13 @@ docBase configured in the context configuration ".xml" file.</p>
 
 <p>Here is an example of installing an application using a Context
 configuration ".xml" file for Tomcat running on Windows.</p>
-<div class="codeBox"><pre><code>XML Configuration file URL: file:C:/path/to/context.xml</code></pre></div>
+<div class="codeBox"><pre><code>xml Configuration file URL: file:C:/path/to/context.xml</code></pre></div>
 
 
 <p>Here is an example of installing an application using a Context
 configuration ".xml" file and a web application ".war" file located
 on the server (Tomcat running on Unix).</p>
-<div class="codeBox"><pre><code>XML Configuration file URL: file:/path/to/context.xml
+<div class="codeBox"><pre><code>xml Configuration file URL: file:/path/to/context.xml
 WAR or Directory URL: jar:file:/path/to/bar.war!/</code></pre></div>
 
 </div></div>
@@ -356,7 +356,7 @@ extension is used as the context path name.</p>
 server from your local desktop system.</p>
 
 <p>The .WAR file may include Tomcat specific deployment configuration, by
-including a Context configuration XML file in
+including a Context configuration xml file in
 <code>/META-INF/context.xml</code>.</p>
 
 <p>Upload of a WAR file could fail for the following reasons:</p>
@@ -395,7 +395,7 @@ extension.</p>
 
 <p>For security when untrusted users can manage web applications, the
 Host deployXML flag can be set to false.  This prevents untrusted users
-from installing web applications using a configuration XML file and
+from installing web applications using a configuration xml file and
 also prevents them from installing application directories or ".war"
 files located outside of their Host appBase.</p>
 
@@ -427,7 +427,7 @@ error message.  Possible causes for problems include:</p>
     <p>An exception was encountered trying to start the new web application.
     Check the Tomcat logs for the details, but likely explanations include
     problems parsing your <code>/WEB-INF/web.xml</code> file, or missing
-    classes encountered when initializing application event listeners and
+    model encountered when initializing application event listeners and
     filters.</p>
     </li>
 <li><em>Invalid application URL was specified</em>
@@ -471,7 +471,7 @@ StandardHost implementation. It will not work if a custom host is used that
 does not extend StandardHost.</p>
 
 <p>This diagnostic will list context paths for the web applications that were
-stopped, reloaded or undeployed, but which classes from the previous runs
+stopped, reloaded or undeployed, but which model from the previous runs
 are still present in memory, thus being a memory leak. If an application
 has been reloaded several times, it may be listed several times.</p>
 

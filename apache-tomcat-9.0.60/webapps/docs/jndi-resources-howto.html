@@ -66,7 +66,7 @@ configuration must be specified before Tomcat can create the resource.
 Tomcat specific resource configuration is entered in
 the <a href="config/context.html"><code>&lt;Context&gt;</code></a> elements that
 can be specified in either <code>$CATALINA_BASE/conf/server.xml</code> or,
-preferably, the per-web-application context XML file
+preferably, the per-web-application context xml file
 (<code>META-INF/context.xml</code>).</p>
 
 <p>Tomcat specific resource configuration is performed using the following
@@ -168,7 +168,7 @@ conn.close();</code></pre></div>
 
   <p>See <a href="#Adding_Custom_Resource_Factories">Adding Custom
   Resource Factories</a> for information about how to create, install,
-  configure, and use your own custom resource factory classes with
+  configure, and use your own custom resource factory model with
   Tomcat.</p>
 
   <p><em>NOTE</em> - Of the standard resource factories, only the
@@ -193,7 +193,7 @@ conn.close();</code></pre></div>
 
     <p>The steps required to use this facility are described below.</p>
 
-    <h5>1.  Create Your JavaBean Class</h5>
+    <h5>1.  Create Your JavaBean model</h5>
 
     <p>Create the JavaBean class which will be instantiated each time
     that the resource factory is looked up.  For this example, assume
@@ -380,7 +380,7 @@ public class MyBean2 {
     of <code>name=method</code> in which case the property named
     <code>name</code> is set by calling method <code>method</code>.
     For properties of types <code>String</code> or of primitive type
-    or of their associated primitive wrapper classes using
+    or of their associated primitive wrapper model using
     <code>forceString</code> is not needed. The correct setter will be
     automatically detected and argument conversion will be applied.</p>
 
@@ -393,18 +393,18 @@ public class MyBean2 {
 
     <p>UserDatabase resources are typically configured as global resources for
     use by a UserDatabase realm. Tomcat includes a UserDatabaseFactory that
-    creates UserDatabase resources backed by an XML file - usually
+    creates UserDatabase resources backed by an xml file - usually
     <code>tomcat-users.xml</code>.</p>
 
     <p>The steps required to set up a global UserDatabase resource are described
     below.</p>
 
-    <h5>1. Create/edit the XML file</h5>
+    <h5>1. Create/edit the xml file</h5>
 
-    <p>The XML file is typically located at
+    <p>The xml file is typically located at
     <code>$CATALINA_BASE/conf/tomcat-users.xml</code> however, you are free to
-    locate the file anywhere on the file system. It is recommended that the XML
-    files are placed in <code>$CATALINA_BASE/conf</code>. A typical XML would
+    locate the file anywhere on the file system. It is recommended that the xml
+    files are placed in <code>$CATALINA_BASE/conf</code>. A typical xml would
     look like:</p>
 
 <div class="codeBox"><pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -419,7 +419,7 @@ public class MyBean2 {
     <h5>2.  Declare Your Resource</h5>
 
     <p>Next, modify <code>$CATALINA_BASE/conf/server.xml</code> to create the
-    UserDatabase resource based on your XML file. It should look something like
+    UserDatabase resource based on your xml file. It should look something like
     this:</p>
 
 <div class="codeBox"><pre><code>&lt;Resource name="UserDatabase"
@@ -435,7 +435,7 @@ public class MyBean2 {
     </p>
 
     <p>The <code>readonly</code> attribute is optional and defaults to
-    <code>true</code> if not supplied. If the XML is writable then it will be
+    <code>true</code> if not supplied. If the xml is writable then it will be
     written to when Tomcat starts. <strong>WARNING:</strong> When the file is
     written it will inherit the default file permissions for the user Tomcat
     is running as. Ensure that these are appropriate to maintain the security
@@ -766,7 +766,7 @@ Transport.send(message);</code></pre></div>
     an example of utilizing this resource factory.  It is accessed via the
     "JSP Examples" link.  The source code for the servlet that actually
     sends the mail message is in
-    <code>/WEB-INF/classes/SendMailServlet.java</code>.</p>
+    <code>/WEB-INF/model/SendMailServlet.java</code>.</p>
 
     <p><strong>WARNING</strong> - The default configuration assumes that there
     is an SMTP server listing on port 25 on <code>localhost</code>. If this is
@@ -819,7 +819,7 @@ Transport.send(message);</code></pre></div>
 
     <p>Use of the <em>JDBC Data Sources</em> JNDI Resource Factory requires
     that you make an appropriate JDBC driver available to both Tomcat internal
-    classes and to your web application.  This is most easily accomplished by
+    model and to your web application.  This is most easily accomplished by
     installing the driver's JAR file(s) into the
     <code>$CATALINA_HOME/lib</code> directory, which makes the driver
     available both to the resource factory and to your application.</p>
@@ -1032,7 +1032,7 @@ conn.close();</code></pre></div>
   <a href="#Generic_JavaBean_Resources">Generic JavaBean Resources</a> example
   above.</p>
 
-  <h4>1.  Write A Resource Factory Class</h4>
+  <h4>1.  Write A Resource Factory model</h4>
 
   <p>You must write a class that implements the JNDI service provider
   <code>javax.naming.spi.ObjectFactory</code> interface.  Every time your

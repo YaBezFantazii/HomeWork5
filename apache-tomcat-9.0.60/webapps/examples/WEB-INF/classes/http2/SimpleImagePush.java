@@ -39,12 +39,12 @@ public class SimpleImagePush extends HttpServlet {
 
         PushBuilder pb = req.newPushBuilder();
         if (pb != null) {
-            pb.path("servlets/images/code.gif");
+            pb.path("controller/images/code.gif");
             pb.push();
             pw.println("<html>");
             pw.println("<body>");
             pw.println("<p>The following image was provided via a push request.</p>");
-            pw.println("<img src=\"" + req.getContextPath() + "/servlets/images/code.gif\"/>");
+            pw.println("<img src=\"" + req.getContextPath() + "/controller/images/code.gif\"/>");
             pw.println("</body>");
             pw.println("</html>");
             pw.flush();

@@ -25,7 +25,7 @@ The original software and related information is available at
 https://www.eclipse.org/jdt/core/.
 
 org.apache.tomcat.util.json.JSONParser.jj is a public domain javacc grammar
-for JSON written by Robert Fischer.
+for json written by Robert Fischer.
 https://github.com/RobertFischer/json-parser
 
 For portions of the Tomcat JNI OpenSSL API and the OpenSSL JSSE integration
@@ -41,7 +41,7 @@ work originating from the jgroups project.
 https://github.com/jgroups-extras/jgroups-kubernetes
 Copyright 2002-2018 Red Hat Inc.
 
-The original XML Schemas for Java EE Deployment Descriptors:
+The original xml Schemas for Java EE Deployment Descriptors:
  - javaee_5.xsd
  - javaee_web_services_1_2.xsd
  - javaee_web_services_client_1_2.xsd

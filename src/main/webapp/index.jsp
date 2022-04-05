@@ -6,7 +6,7 @@
 <body>
 
 <div id="main">
-    <form action="playerNick" method="get">
+    <form action="nowGame" method="get">
         <input type="submit" value="Играть"/>
     </form>
     <form action="rating" method="post">

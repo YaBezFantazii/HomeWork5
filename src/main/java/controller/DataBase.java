@@ -1,10 +1,12 @@
 package controller;
 
 import repositores.WriteRead;
-import repositores.bd.ReadBD;
+import repositores.bd.ReadGameBD;
 import repositores.bd.CheckNewTableBD;
+import repositores.bd.ReadRatingBD;
 import repositores.rating.ReadRating;
 import utils.GameListDB;
+import utils.PrintArchive;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -25,7 +27,7 @@ public class DataBase extends HttpServlet {
 
         // Если на сайте выбран флажок "Общий рейтинг", то показываем его
         if(request.getParameter("command")!=null){
-            WriteRead.Read read = new ReadRating();
+            WriteRead.Read read = new ReadRatingBD();
             request.setAttribute("rating",  read.Read());
             System.out.println("Показываем общий рейтинг"); // sout для теста
         }
@@ -45,8 +47,8 @@ public class DataBase extends HttpServlet {
             b = "";
         } else {
         // Читаем из БД запись о игре по ее id
-            WriteRead.ReadFile read = new ReadBD();
-            b = read.Read(id);
+            WriteRead.ReadFile read = new ReadGameBD();
+            b = PrintArchive.Print(read.Read(id));
             System.out.println("Показываем выбранную игру"); // sout для теста
         }
         // Передаем полученную игру в jsp

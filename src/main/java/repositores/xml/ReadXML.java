@@ -18,9 +18,10 @@ import java.io.IOException;
 
 public class ReadXML implements WriteRead.ReadFile {
 
-    public String Read(String xml){
+    public GameList Read(String xml){
+
+        GameList GameList = new GameList();
         try {
-            GameList GameList = new GameList();
             // Получение фабрики, чтобы после получить билдер документов.
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             // Получили из фабрики билдер, который парсит XML, создает структуру Document в виде иерархического дерева.
@@ -79,7 +80,7 @@ public class ReadXML implements WriteRead.ReadFile {
 
             // Передаем в метод Print массив GameList с полученными данными (метод производит печать
             // данных в консоль).
-            return PrintArchive.Print(GameList);
+            return GameList;
 
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
@@ -88,6 +89,6 @@ public class ReadXML implements WriteRead.ReadFile {
         } catch (SAXException e) {
             e.printStackTrace();
         }
-        return "Неккоректное число или сбой сервера";
+        return GameList;
     }
 }

@@ -16,10 +16,10 @@ public class WriteRead {
 
     // Наследуется классами ReadJSON, ReadXML, ReadBD отвечающим за чтение из файлов xml, json и чтения из БД
     public interface ReadFile {
-        String Read(String nameFile);
+        GameList Read (String nameFile);
     }
 
-    // Наследуется классами ReadRating, отвечающими за чтение из файла общего рейтинга
+    // Наследуется классами ReadRating,ReadRatingBD,, отвечающими за чтение общего рейтинга из файла result.txt и бд
     public interface Read {
         String Read();
 

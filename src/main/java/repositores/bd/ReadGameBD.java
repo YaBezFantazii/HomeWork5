@@ -6,20 +6,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import model.GameList;
-import utils.PrintArchive;
 import repositores.WriteRead;
 
-public class ReadBD implements WriteRead.ReadFile {
+public class ReadGameBD implements WriteRead.ReadFile {
 
     // Метод для чтения игры из бд по ее id, и записи ее в String
-    public String Read (String id) {
+    public GameList Read (String id) {
         String result = "";
+        // Объект GameList, куда будет записана игра
+        GameList GameList = new GameList();
         try {
             //Подключаемся к бд
             Connection con = ConnectBD.ConnectDB();
             PreparedStatement query;
-            // Объект GameList, куда будет записана игра
-            GameList GameList = new GameList();
 
             // Получаем игру по ее id
             query = con.prepareStatement("select * from game where id = ?;");
@@ -31,12 +30,10 @@ public class ReadBD implements WriteRead.ReadFile {
                 GameList.setCell(FormatStepBD.FormatStepBD(res.getString(4)));
                 GameList.setWin(res.getInt(5));
             }
-            // Записываем игру в переменную с помощью метода PrintArchive.Print в строку для вывода на странице сайта
-            result = PrintArchive.Print(GameList);
+            con.close();
         } catch (SQLException e) {
             System.out.println(e);
         }
-
-        return result;
+        return GameList;
     }
 }

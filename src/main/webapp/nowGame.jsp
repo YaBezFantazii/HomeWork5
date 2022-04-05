@@ -9,6 +9,9 @@
     <form action="http://localhost:8080/gameplay" method="get">
         <input type="submit" value="Назад"/>
     </form>
+    <form action="playerNick" method="get">
+            <input type="submit" value="Новая игра"/>
+    </form>
     <form>
             <div>Пример:</div>
             <div>| 1 | | 2 | | 3 |</div>

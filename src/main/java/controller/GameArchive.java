@@ -55,7 +55,7 @@ public class GameArchive extends HttpServlet {
                 request.setCharacterEncoding("windows-1251");
             }
 
-            String b = read.Read(listFiles[number]);
+            String b = PrintArchive.Print(read.Read(listFiles[number]));
             request.setAttribute("game",b);
             request.getRequestDispatcher("/gameArchive.jsp").forward(request, response);
         // Иначе пишем ошибку, что введено неккоректное число

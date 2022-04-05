@@ -6,7 +6,7 @@ import model.GameList;
 public class PrintGame {
 
     // Печать поля текущего поля игры, полученного из объекта GameList (от PrintArchive отличает тем,
-    // что печатает только текущей ход, а не все ходы.
+    // что печатает текущей ход, а не все ходы, и имя текущего игрока.
     public static String PrintGame(GameList GameList) {
         String print = "";
         String filed[] = new String[]{"-","-","-","-","-","-","-","-","-"};

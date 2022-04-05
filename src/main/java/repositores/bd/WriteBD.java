@@ -74,5 +74,6 @@ public class WriteBD implements WriteRead.Write {
         }
         // Выполняем запрос
         query.execute();
+        con.close();
     }
 }

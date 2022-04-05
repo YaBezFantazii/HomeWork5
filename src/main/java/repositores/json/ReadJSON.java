@@ -15,9 +15,10 @@ import java.nio.charset.StandardCharsets;
 public class ReadJSON implements WriteRead.ReadFile {
 
     // Метод, отвечающий за вывод данных из json файла
-    public String Read(String json) {
+    public GameList Read(String json) {
+
+        GameList GameList = new GameList();
         try {
-            GameList GameList = new GameList();
             File file = new File("JSON\\"+json);
 
             JsonElement rider = JsonParser.parseReader(new FileReader(file, StandardCharsets.UTF_8));
@@ -76,17 +77,14 @@ public class ReadJSON implements WriteRead.ReadFile {
                 }
             }
 
-            return PrintArchive.Print(GameList);
-
         }
      catch(FileNotFoundException e)
     {
         System.out.println(e);
     } catch (IOException e) {
             e.printStackTrace();
-        }
-
-        return "Неккоректное число или сбой сервера";
+    }
+        return GameList;
 }
 
 }

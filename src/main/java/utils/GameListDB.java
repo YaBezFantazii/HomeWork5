@@ -22,6 +22,7 @@ public class GameListDB {
         while (res.next()){
             result.add(res.getString(1)+") "+res.getString(2)+"-"+res.getString(3));
         }
+        con.close();
         return result;
     }
 }

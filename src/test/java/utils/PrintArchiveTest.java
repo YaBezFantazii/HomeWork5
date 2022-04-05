@@ -36,7 +36,9 @@ public class PrintArchiveTest {
         game3 = new GameList("test31","test32",c,2);
     }
 
-    // Тест, правильно ли печатаются данные, обработанные в PrintArchive
+    // Тест, правильно ли печатаются данные, обработанные в методе PrintArchive
+    // Файлы берутся из папки (корневая_папка_проекта/src/test/resources/utils
+    // Так же здесь тестируется метод utils/PrintField, так как он используется в PrintArchive
     @Test
     public void print() throws IOException {
         File file = new File(this.getClass().getResource("/utils/printArchive1.txt").getFile());

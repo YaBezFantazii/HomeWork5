@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+// тест сервлета, отвечающего за вывод общего рейтинга из result.txt
 @RunWith(MockitoJUnitRunner.class)
 public class RatingTest {
 

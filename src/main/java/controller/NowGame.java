@@ -1,5 +1,6 @@
 package controller;
 
+import exceptions.CellCheckException;
 import utils.PrintArchive;
 
 import javax.servlet.ServletException;
@@ -28,7 +29,7 @@ public class NowGame extends HttpServlet {
         // Если сессии не существует, то перекидываем пользователя на страницу ввода имен
         if (session.getAttribute("GameList")==null){
             request.setAttribute("error","Сначала введите имена пользователей");
-            System.out.println("Не введены имена игроков, переходим на страницу выбора (Post)"); // sout для тестов
+            System.out.println("Не введены имена игроков, переходим на страницу выбора (Post NowGame)"); // sout для тестов
             response.sendRedirect("/gameplay/playerNick.jsp");
 
         } else {
@@ -49,23 +50,11 @@ public class NowGame extends HttpServlet {
                 cell = Integer.parseInt(request.getParameter("nowGame"));
             }
 
-            // Проверяем что cell может быть только от 1 до 9, иначе пишем ошибку
-            if (cell>=1&&cell<=9) {
-                for (int i=0;i<Game.getCell().size();i++){
-                    // Если в выбранную ячейку уже поставлен Х или О, то пишем ошибку и перезагружаем страницу
-                    if (Game.getCellId(i)==cell){
-                        request.setAttribute("error","Неккоректные данные");
-                        request.setAttribute("field", PrintGame.PrintGame(Game));
-                        System.out.println("Выбранная ячейка занята"); // sout для тестов
-                        request.getRequestDispatcher("/nowGame.jsp").forward(request, response);
-                        check = false;
-                    }
-                }
+            try {
+                // Если в cell некорректные данные, то выбросится catch
+                Game.setCellId(cell);
                 // Если все в порядке то записываем ход в объект Game, и обновляем данные в сессии
-                if (check) {
-                    Game.setCellId(cell);
-                    session.setAttribute("GameList",Game);
-                }
+                session.setAttribute("GameList",Game);
                 // Проверка на победу (происходит каждый ход)
                 // setWin=0 - победа 1 игрока, setWin=1 - победа 2 игрока, setWin=2 - ничья
                 if (CheckWin.CheckWin(Game)){
@@ -79,9 +68,11 @@ public class NowGame extends HttpServlet {
                 } else if (Game.getCell().size()==9){
                     Game.setWin(2);
                 }
-            } else if (cell!=-100){
-                System.out.println("Введено неккоретное число в поле выбора ячейки"); // sout для тестов
-                request.setAttribute("error","Неккоректные данные");
+            } catch (CellCheckException e) {
+                if (cell!=-100){request.setAttribute("error",e.getMessage());}
+                request.setAttribute("field", PrintGame.PrintGame(Game));
+                System.out.println("Выбранная ячейка занята (Post NowGame"); // sout для тестов
+                request.getRequestDispatcher("/nowGame.jsp").forward(request, response);
             }
             // Если переменная win в объекте класса GameList не равна 3 (тогда она равна от 0 до 2),
             // то записываем данные об игре в общий рейтинг, json и xml файлы, обращаемся в resultGame.jsp,
@@ -122,7 +113,7 @@ public class NowGame extends HttpServlet {
         HttpSession session = request.getSession();
         // Если сессии не существует, то перекидываем пользователя на страницу ввода имен
         if (session.getAttribute("GameList")==null){
-            System.out.println("Не введены имена игроков, переходим на страницу выбора (Get)"); // sout для тестов
+            System.out.println("Не введены имена игроков, переходим на страницу выбора (Get NowGame)"); // sout для тестов
             response.sendRedirect("/gameplay/playerNick.jsp");
         } else {
             request.setAttribute("field","");
@@ -132,7 +123,7 @@ public class NowGame extends HttpServlet {
             request.setAttribute("nick1",Game.getNickName1());
             request.setAttribute("nick2",Game.getNickName2());
             request.setAttribute("field", PrintGame.PrintGame(Game));
-            System.out.println("Переходим к игре"); // sout для тестов
+            System.out.println("Переходим к игре (Get NowGame"); // sout для тестов
             request.getRequestDispatcher("/nowGame.jsp").forward(request, response);
             doPost(request,response);
         }

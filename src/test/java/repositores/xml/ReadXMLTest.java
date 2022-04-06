@@ -1,5 +1,7 @@
 package repositores.xml;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import org.junit.Test;
 import repositores.WriteRead;
@@ -18,7 +20,7 @@ public class ReadXMLTest {
 
     // Победа 1 игрока
     @Test
-    public void read1() throws IOException {
+    public void read1() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay1.xml";
         a.addAll(Arrays.asList(1,2,3,4,5,6,7));
@@ -35,7 +37,7 @@ public class ReadXMLTest {
 
     // Победа 2 игрока
     @Test
-    public void read2() throws IOException {
+    public void read2() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay2.xml";
         a.addAll(Arrays.asList(1,2,3,5,7,6,9,4));
@@ -52,7 +54,7 @@ public class ReadXMLTest {
 
     // ничья
     @Test
-    public void read3() throws IOException {
+    public void read3() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay3.xml";
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));

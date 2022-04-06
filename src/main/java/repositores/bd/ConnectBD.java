@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 
     public class ConnectBD {
 
-        // Метод для подключения к субд "h2" через jdbs
+        // Метод для подключения к субд "h2" через jdbc
         public static Connection ConnectDB() {
 
             Connection con = null;

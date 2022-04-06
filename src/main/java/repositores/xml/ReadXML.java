@@ -1,5 +1,7 @@
 package repositores.xml;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import utils.FormatStep;
 import utils.PrintArchive;
 import repositores.WriteRead;
@@ -87,6 +89,12 @@ public class ReadXML implements WriteRead.ReadFile {
         } catch (IOException e) {
             e.printStackTrace();
         } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (PlayerNickLengthException e){
+            System.out.println(e);
+            e.printStackTrace();
+        } catch (CellCheckException e) {
+            System.out.println(e);
             e.printStackTrace();
         }
         return GameList;

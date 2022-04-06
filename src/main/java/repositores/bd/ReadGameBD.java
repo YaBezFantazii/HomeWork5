@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import repositores.WriteRead;
 
@@ -33,6 +35,11 @@ public class ReadGameBD implements WriteRead.ReadFile {
             con.close();
         } catch (SQLException e) {
             System.out.println(e);
+        } catch (PlayerNickLengthException e){
+            System.out.println(e);
+        } catch (CellCheckException e) {
+            System.out.println(e);
+            e.printStackTrace();
         }
         return GameList;
     }

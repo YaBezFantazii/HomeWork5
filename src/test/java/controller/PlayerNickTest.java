@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+// Тест сервлета, отвечающего за вводи имен игроков
 @RunWith(MockitoJUnitRunner.class)
 public class PlayerNickTest {
 

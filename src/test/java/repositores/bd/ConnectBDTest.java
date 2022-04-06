@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 public class ConnectBDTest {
 
+    // тест соединения с бд
     @Test
     public void connectDB() {
         Connection connect = null;

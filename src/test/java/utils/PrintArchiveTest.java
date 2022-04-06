@@ -11,6 +11,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+// тест класса, отвечающего за печать игры из класса GameList в строку для передачи в jsp
 public class PrintArchiveTest {
     ArrayList<Integer> a;
     ArrayList<Integer> b;

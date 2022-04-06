@@ -53,7 +53,7 @@ public class DataBase extends HttpServlet {
         }
         // Передаем полученную игру в jsp
         request.setAttribute("game", b);
-        System.out.println("Тест (Post)"); // sout для тестов
+        System.out.println("Тест (Post DataBase)"); // sout для тестов
         request.getRequestDispatcher("/dataBase.jsp").forward(request, response);
 
     }
@@ -71,7 +71,7 @@ public class DataBase extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("Тест (Get)");
+        System.out.println("Тест (Get DataBase)"); // sout для тестов
         request.setAttribute("GameList", GameList);
         request.getRequestDispatcher("/dataBase.jsp").forward(request, response);
     }

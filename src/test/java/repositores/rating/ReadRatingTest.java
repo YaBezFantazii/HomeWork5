@@ -18,7 +18,7 @@ public class ReadRatingTest {
         String result = read.Read();
 
         String line,rating="";
-        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt"));
+        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt", StandardCharsets.UTF_8));
         while ((line = resultRead.readLine()) != null) {
             rating += line + "<br>";
         }

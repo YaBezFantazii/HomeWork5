@@ -1,7 +1,7 @@
 package utils;
 
-import org.junit.Before;
 import org.junit.Test;
+import repositores.rating.Convert;
 
 import static org.junit.Assert.*;
 
@@ -20,7 +20,7 @@ public class ConvertTest {
     @Test
     public void convert() {
 
-        assertArrayEquals(num1,Convert.Convert(test1));
+        assertArrayEquals(num1, Convert.Convert(test1));
         assertArrayEquals(num2,Convert.Convert(test2));
         assertArrayEquals(num3,Convert.Convert(test3));
         assertArrayEquals(num4,Convert.Convert(test4));

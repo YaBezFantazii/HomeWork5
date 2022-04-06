@@ -1,5 +1,7 @@
 package repositores.rating;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import org.junit.Test;
 import repositores.WriteRead;
@@ -8,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -21,7 +24,7 @@ public class WriteRatingTest {
 
     // победа 1 игрока
     @Test
-    public void write1() throws IOException {
+    public void write1() throws IOException, PlayerNickLengthException, CellCheckException {
         String line,rating="";
         a.addAll(Arrays.asList(1,2,3,4,5,6,7));
         GameList = new GameList("test1","тест2",a,0);
@@ -29,7 +32,7 @@ public class WriteRatingTest {
         WriteRead.Write write = new WriteRating();
         write.Write(GameList);
 
-        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt"));
+        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt",StandardCharsets.UTF_8));
         while ((line = resultRead.readLine()) != null) {
             rating += line + "<br>";
         }
@@ -42,7 +45,7 @@ public class WriteRatingTest {
 
     // победа 2 игрока
     @Test
-    public void write2() throws IOException {
+    public void write2() throws IOException, PlayerNickLengthException, CellCheckException {
         String line,rating="";
         a.addAll(Arrays.asList(1,2,3,5,6,8));
         GameList = new GameList("test3","тест2",a,1);
@@ -50,7 +53,7 @@ public class WriteRatingTest {
         WriteRead.Write write = new WriteRating();
         write.Write(GameList);
 
-        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt"));
+        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt", StandardCharsets.UTF_8));
         while ((line = resultRead.readLine()) != null) {
             rating += line + "<br>";
         }
@@ -63,7 +66,7 @@ public class WriteRatingTest {
 
     // ничья
     @Test
-    public void write3() throws IOException {
+    public void write3() throws IOException, PlayerNickLengthException, CellCheckException {
         String line,rating="";
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));
         GameList = new GameList("test4","тест2",a,2);
@@ -71,7 +74,7 @@ public class WriteRatingTest {
         WriteRead.Write write = new WriteRating();
         write.Write(GameList);
 
-        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt"));
+        BufferedReader resultRead = new BufferedReader(new FileReader("Result.txt", StandardCharsets.UTF_8));
         while ((line = resultRead.readLine()) != null) {
             rating += line + "<br>";
         }

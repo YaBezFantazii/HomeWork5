@@ -1,11 +1,13 @@
 package controller;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 import repositores.bd.CheckNewTableBD;
+import test.CopyBD;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
+// Тест сервлета, отвечающего за работу с бд
 @RunWith(MockitoJUnitRunner.class)
 public class DataBaseTest {
 
@@ -23,11 +29,17 @@ public class DataBaseTest {
     HttpServletRequest request = Mockito.mock(HttpServletRequest.class);
     HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
     RequestDispatcher dispatcher = Mockito.mock((RequestDispatcher.class));
+    ArrayList<ResultSet> res;
 
-    // Проверка, существуют ли таблицы в бд
+    // До и после создаем/удаляем временную бд
     @Before
-    public void CheckTableDB(){
-        CheckNewTableBD.CheckNewTable();
+    public void TestBDCreate() throws SQLException {
+        this.res = CopyBD.CopyBD();
+    }
+
+    @After
+    public void TestBDelete() throws SQLException {
+        CopyBD.DeleteBD(this.res);
     }
 
     // Общий рейтинг без выбранной игры для чтения

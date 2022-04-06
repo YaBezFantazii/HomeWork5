@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+// Тест сервлета, отвечающего чтение xml и json файлов
 @RunWith(MockitoJUnitRunner.class)
 public class GameArchiveTest {
 

@@ -1,5 +1,7 @@
 package repositores.json;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import org.junit.Test;
 import repositores.WriteRead;
@@ -11,6 +13,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+// тест класса, отвечающего за чтение json файлов
 public class ReadJSONTest {
 
     model.GameList GameList;
@@ -18,7 +21,7 @@ public class ReadJSONTest {
 
     // Победа 1 игрока
     @Test
-    public void read1() throws IOException {
+    public void read1() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay1.json";
         a.addAll(Arrays.asList(1,2,3,4,5,6,7));
@@ -35,7 +38,7 @@ public class ReadJSONTest {
 
     // Победа 2 игрока
     @Test
-    public void read2() throws IOException {
+    public void read2() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay2.json";
         a.addAll(Arrays.asList(1,2,3,5,7,6,9,4));
@@ -52,7 +55,7 @@ public class ReadJSONTest {
 
     // ничья
     @Test
-    public void read3() throws IOException {
+    public void read3() throws IOException, PlayerNickLengthException, CellCheckException {
 
         String xml = "gameplay3.json";
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));

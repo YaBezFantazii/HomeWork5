@@ -35,7 +35,7 @@ public class GameArchive extends HttpServlet {
         if (!request.getParameter("number").equals("")){
             number = Integer.parseInt(request.getParameter("number"))-1;
         } else {
-            System.out.println("Не выбран файл"); // sout для тестов
+            System.out.println("Не выбран файл (Post GameArchive)"); // sout для тестов
             number = -1;
         }
         // Если число входит в границы кол-ва файлов, то печатаем данные об игре, содержащиеся в этом файле
@@ -45,12 +45,12 @@ public class GameArchive extends HttpServlet {
             WriteRead.ReadFile read;
             if (listFiles[number].contains(".json")){
                 read = new ReadJSON();
-                System.out.println("читаем json"); // sout для тестов
+                System.out.println("читаем json (Post GameArchive)"); // sout для тестов
                 System.out.println(System.getProperty("user.dir")+"\\json\\"+listFiles[number]); // sout для тестов
                 request.setCharacterEncoding("UTF-8");
             } else {
                 read = new ReadXML();
-                System.out.println("Читаем xml"); // sout для тестов
+                System.out.println("Читаем xml (Post GameArchive)"); // sout для тестов
                 System.out.println(System.getProperty("user.dir")+"\\xml\\"+listFiles[number]); // sout для тестов
                 request.setCharacterEncoding("windows-1251");
             }
@@ -76,21 +76,7 @@ public class GameArchive extends HttpServlet {
                 ListFiles.ListFiles("json")
         );
         request.setAttribute("ListFiles",listFiles);
-        System.out.println("Тест (Get)"); // sout для тестов
+        System.out.println("Тест (Get GameArchive)"); // sout для тестов
         request.getRequestDispatcher("/gameArchive.jsp").forward(request, response);
     }
-
-    public void doUpdate (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        request.setAttribute("game","");
-        // Получаем список файлов, в которых содержаться данные об играх (xml, json)
-        String[] listFiles = ArrayUtils.addAll(
-                ListFiles.ListFiles("xml"),
-                ListFiles.ListFiles("json")
-        );
-        request.setAttribute("ListFiles",listFiles);
-        System.out.println("Тест (Get)"); // sout для тестов
-        request.getRequestDispatcher("/gameArchive.jsp").forward(request, response);
-    }
-
 }

@@ -1,5 +1,7 @@
 package repositores.json;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import org.junit.Test;
 import repositores.WriteRead;
@@ -14,6 +16,7 @@ import java.util.Arrays;
 
 import static org.junit.Assert.*;
 
+// тест класса, отвечающего за запись json файла (созданные файлы удаляются после тестов)
 public class WriteJSONTest {
 
     model.GameList GameList = new GameList();
@@ -22,7 +25,7 @@ public class WriteJSONTest {
 
     // Победа 1 игрока
     @Test
-    public void write1() throws IOException {
+    public void write1() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test1","test2");
         a.addAll(Arrays.asList(1,2,3,4,5,6,7));
         GameList.setCell(a);
@@ -49,7 +52,7 @@ public class WriteJSONTest {
 
     // Победа 2 игрока
     @Test
-    public void write2() throws IOException {
+    public void write2() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test3","test4");
         a.addAll(Arrays.asList(1,2,3,5,6,8));
         GameList.setCell(a);
@@ -74,7 +77,7 @@ public class WriteJSONTest {
 
     // ничья
     @Test
-    public void write3() throws IOException {
+    public void write3() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test5","test6");
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));
         GameList.setCell(a);

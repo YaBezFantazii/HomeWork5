@@ -48,6 +48,12 @@ public class CopyBD {
             query.setString(1, FormatStepBD.FormatStepBD(a));
             query.execute();
 
+            query = con.prepareStatement("insert into Game (player1,player2,steps,result)" +
+                    "values('max','тест4',?,2)");
+            a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));
+            query.setString(1, FormatStepBD.FormatStepBD(a));
+            query.execute();
+
             return res;
     }
 

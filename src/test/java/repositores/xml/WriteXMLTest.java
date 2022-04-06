@@ -1,5 +1,7 @@
 package repositores.xml;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 import org.junit.Test;
 import repositores.WriteRead;
@@ -23,7 +25,7 @@ public class WriteXMLTest {
 
     // Победа 1 игрока
     @Test
-    public void write1() throws IOException {
+    public void write1() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test1","test2");
         a.addAll(Arrays.asList(1,2,3,4,5,6,7));
         GameList.setCell(a);
@@ -62,7 +64,7 @@ public class WriteXMLTest {
 
     // Победа 2 игрока
     @Test
-    public void write2() throws IOException {
+    public void write2() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test3","test4");
         a.addAll(Arrays.asList(1,2,3,5,6,8));
         GameList.setCell(a);
@@ -101,7 +103,7 @@ public class WriteXMLTest {
 
     // ничья
     @Test
-    public void write3() throws IOException {
+    public void write3() throws IOException, PlayerNickLengthException, CellCheckException {
         GameList.setNickName("test5","test6");
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));
         GameList.setCell(a);

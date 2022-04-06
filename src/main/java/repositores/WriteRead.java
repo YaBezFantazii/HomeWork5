@@ -14,7 +14,7 @@ public class WriteRead {
         void Write(GameList GameList);
     }
 
-    // Наследуется классами ReadJSON, ReadXML, ReadBD отвечающим за чтение из файлов xml, json и чтения из БД
+    // Наследуется классами ReadJSON, ReadXML, ReadGameBD отвечающим за чтение из файлов xml, json и чтения из БД
     public interface ReadFile {
         GameList Read (String nameFile);
     }

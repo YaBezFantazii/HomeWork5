@@ -14,7 +14,7 @@
     <form action="dataBase" method="post">
             <INPUT TYPE="radio" name="command" value="1"/>Общий рейтинг
             <p>Введите номер игры, который указан перед скобками:</p>
-            <input type="text" name="id"/><br/><br/>
+            <input type="number" name="id"/><br/><br/>
             <input type="submit" value="Принять"/>
             <div>Номер игры - игрок1 - игрок2</div>
             <div>-------------------------</div>

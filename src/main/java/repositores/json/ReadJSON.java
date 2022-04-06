@@ -1,5 +1,7 @@
 package repositores.json;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import utils.FormatStep;
 import repositores.WriteRead;
 import utils.PrintArchive;
@@ -83,7 +85,13 @@ public class ReadJSON implements WriteRead.ReadFile {
         System.out.println(e);
     } catch (IOException e) {
             e.printStackTrace();
-    }
+    } catch (PlayerNickLengthException e){
+            System.out.println(e);
+            e.printStackTrace();
+    } catch (CellCheckException e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
         return GameList;
 }
 

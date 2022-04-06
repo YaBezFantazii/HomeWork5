@@ -1,10 +1,15 @@
 package controller;
 
+import exceptions.CellCheckException;
+import exceptions.PlayerNickLengthException;
 import model.GameList;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import test.CopyBD;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,9 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+// Тест сервлета, отвечающего за процесс игры
 @RunWith(MockitoJUnitRunner.class)
 public class NowGameTest {
 
@@ -24,6 +32,18 @@ public class NowGameTest {
     HttpServletResponse response = Mockito.mock(HttpServletResponse.class);
     HttpSession session = Mockito.mock(HttpSession.class);
     RequestDispatcher dispatcher = Mockito.mock((RequestDispatcher.class));
+    ArrayList<ResultSet> res;
+
+    // До и после создаем/удаляем временную бд
+    @Before
+    public void TestBDCreate() throws SQLException {
+        this.res = CopyBD.CopyBD();
+    }
+
+    @After
+    public void TestBDelete() throws SQLException {
+        CopyBD.DeleteBD(this.res);
+    }
 
     // Метод Post , не введены имена игроков
     @Test
@@ -37,7 +57,7 @@ public class NowGameTest {
 
     // Метод Post, введено неккоректное число в поле выбора ячейки
     @Test
-    public void doPost2() throws ServletException, IOException {
+    public void doPost2() throws ServletException, IOException, PlayerNickLengthException {
 
         GameList game = new GameList();
         game.setNickName("222","333");
@@ -52,7 +72,7 @@ public class NowGameTest {
 
     // Метод Post, выбранная ячейка занята
     @Test
-    public void doPost3() throws ServletException, IOException {
+    public void doPost3() throws ServletException, IOException, PlayerNickLengthException, CellCheckException {
 
         GameList game = new GameList();
         game.setNickName("222","333");
@@ -68,7 +88,7 @@ public class NowGameTest {
 
     // Метод Post, успешное завершение игры (победа 1 игрока)
     @Test
-    public void doPost4() throws ServletException, IOException {
+    public void doPost4() throws ServletException, IOException, PlayerNickLengthException {
 
         GameList game = new GameList();
         game.setNickName("222","333");
@@ -90,7 +110,7 @@ public class NowGameTest {
 
     // Метод Post, успешное завершение игры (победа 2 игрока)
     @Test
-    public void doPost5() throws ServletException, IOException {
+    public void doPost5() throws ServletException, IOException, PlayerNickLengthException, CellCheckException {
 
         GameList game = new GameList();
         ArrayList<Integer> c = new ArrayList<>();
@@ -110,7 +130,7 @@ public class NowGameTest {
 
     // Метод Post, успешное завершение игры (ничья)
     @Test
-    public void doPost6() throws ServletException, IOException {
+    public void doPost6() throws ServletException, IOException, PlayerNickLengthException, CellCheckException {
 
         GameList game = new GameList();
         ArrayList<Integer> c = new ArrayList<>();
@@ -141,7 +161,7 @@ public class NowGameTest {
 
     // Метод Get, имена игроков в порядке
     @Test
-    public void doGet2() throws ServletException, IOException {
+    public void doGet2() throws ServletException, IOException, PlayerNickLengthException {
 
         GameList game = new GameList();
         game.setNickName("222","333");

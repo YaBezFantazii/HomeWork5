@@ -3,9 +3,10 @@ package repositores.rating;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 
+import exceptions.PlayerNickLengthException;
+import exceptions.RatingStatisticException;
 import model.*;
 import repositores.WriteRead;
-import utils.Convert;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,18 +26,27 @@ public class WriteRating implements WriteRead.Write{
 
         // Добавляем данные о только что закоченной игре в массив объектов Rating
         ArrayList<Rating> Rating = new ArrayList<>();
-        Rating.add(new Rating(
-                GameList.getNickName1(),
-                result[0],
-                result[1],
-                result[2]
-        ));
-        Rating.add(new Rating(
-                GameList.getNickName2(),
-                result[1],
-                result[0],
-                result[2]
-        ));
+        try {
+            Rating.add(new Rating(
+                    GameList.getNickName1(),
+                    result[0],
+                    result[1],
+                    result[2]
+            ));
+            Rating.add(new Rating(
+                    GameList.getNickName2(),
+                    result[1],
+                    result[0],
+                    result[2]
+            ));
+        } catch (PlayerNickLengthException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        } catch (RatingStatisticException e) {
+            e.printStackTrace();
+            System.out.println(e);
+        }
+
 
         String a1;
         //Массив int, вспомогательный, для подсчета общего рейтинга
@@ -85,7 +95,6 @@ public class WriteRating implements WriteRead.Write{
                 }
             }
 
-
             //Сортировка игроков (производится в порядке убывания кол-ва побед)
             Rating.sort(new Comparator<Rating>() {
                 public int compare(Rating o1, Rating o2) {
@@ -111,6 +120,12 @@ public class WriteRating implements WriteRead.Write{
 
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
+        } catch (PlayerNickLengthException e){
+            System.out.println(e);
+            e.printStackTrace();
+        } catch (RatingStatisticException e) {
+            System.out.println(e);
+            e.printStackTrace();
         }
     }
 }

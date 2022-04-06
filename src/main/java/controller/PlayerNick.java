@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+
+import exceptions.PlayerNickLengthException;
 import model.GameList;
 
 public class PlayerNick extends HttpServlet {
@@ -15,16 +17,12 @@ public class PlayerNick extends HttpServlet {
         // Получаем имена игроков из одноименного jsp
         String name1 = request.getParameter("nick1");
         String name2 = request.getParameter("nick2");
+        GameList GameList = new GameList();
 
-        // Если имена совпадают, или хотя бы 1 поле пустое, то пишем ошибку
-        if (name1.equals(name2)||name1==""||name2==""){
-
-            System.out.println("Неккоректные данные"); // sout для тестов
-            request.setAttribute("error","Неккоректные данные");
-            request.getRequestDispatcher("/playerNick.jsp").forward(request, response);
-
-        } else {
+        try {
+            GameList.setNickName(name1,name2);
             // Если все в порядке, то переходим в игре, передавая данные об именах игроков
+            System.out.println("Check");
             request.setAttribute("error","");
             request.setAttribute("nick1",name1);
             request.setAttribute("nick2",name2);
@@ -32,18 +30,21 @@ public class PlayerNick extends HttpServlet {
             HttpSession session = request.getSession();
             // Если сессия уже существует, то удаляем ее.
             if (session.getAttribute("GameList")!=null){
-                System.out.println("Удаляем старую, создаем новую сессию"); // sout для тестов
+                System.out.println("Удаляем старую, создаем новую сессию (Post PlayerNick)"); // sout для тестов
                 session.removeAttribute("GameList");
             }
             // Создаем новую сессию (в ней содержиться объект класса GameList, которые хранит данные о текущей игре)
                 session = request.getSession();
-                GameList GameList = new GameList();
-                GameList.setNickName(name1,name2);
                 session.setAttribute("GameList",GameList);
-                System.out.println("Переходим в игру"); // sout для тестов
-                response.sendRedirect("/gameplay/nowGame");
-            }
+                System.out.println("Переходим в игру (Post PlayerNick)"); // sout для тестов
             // Переходим к игре (nowGame.jsp)
+                response.sendRedirect("/gameplay/nowGame");
+            } catch (PlayerNickLengthException e) {
+                System.out.println(e);
+                e.printStackTrace();
+                request.setAttribute("error",e.getMessage());
+                request.getRequestDispatcher("/playerNick.jsp").forward(request, response);
+         }
         }
 
 

@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.CellCheckException;
 import model.GameList;
 import org.junit.Assert;
 import org.junit.Test;
@@ -20,7 +21,7 @@ public class CheckWinTest {
     // | 0 | x | 0 |
     // | x | - | - |
     @Test
-    public void checkWin1() {
+    public void checkWin1() throws CellCheckException {
         for (int i=1;i<8;i++){
             GameList.setCellId(i);
         }
@@ -31,7 +32,7 @@ public class CheckWinTest {
     // | - | 0 | x |
     // | - | - | 0 |
     @Test
-    public void checkWin2() {
+    public void checkWin2() throws CellCheckException {
         a = new ArrayList<>();
         a.addAll(Arrays.asList(2,1,3,5,6,9));
         GameList.setCell(a);
@@ -42,7 +43,7 @@ public class CheckWinTest {
     // | x | 0 | x |
     // | 0 | x | 0 |
     @Test
-    public void checkWin3() {
+    public void checkWin3() throws CellCheckException {
         a = new ArrayList<>();
         a.addAll(Arrays.asList(1,2,3,5,8,9,6,4,7));
         GameList.setCell(a);

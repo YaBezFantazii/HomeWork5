@@ -34,12 +34,12 @@ public class DataBaseTest {
     // До и после создаем/удаляем временную бд
     @Before
     public void TestBDCreate() throws SQLException {
-        this.res = CopyBD.CopyBD();
+        this.res = CopyBD.CopyTimeBD();
     }
 
     @After
     public void TestBDelete() throws SQLException {
-        CopyBD.DeleteBD(this.res);
+        CopyBD.DeleteTimeBD(this.res);
     }
 
     // Общий рейтинг без выбранной игры для чтения

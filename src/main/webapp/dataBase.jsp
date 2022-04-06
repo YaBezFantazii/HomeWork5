@@ -1,4 +1,5 @@
 <%@ page import="model.GameList" %>
+<%@ page import="repositores.bd.DeleteBD"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,6 +12,9 @@
     <form action="http://localhost:8080/gameplay" method="post">
         <input type="submit" value="Назад"/>
     </form>
+    <form action="http://localhost:8080/gameplay/deleteBD.jsp" method="post">
+            <input type="submit" value="Очистить базу данных"/>
+        </form>
     <form action="dataBase" method="post">
             <INPUT TYPE="radio" name="command" value="1"/>Общий рейтинг
             <p>Введите номер игры, который указан перед скобками:</p>

@@ -13,7 +13,7 @@ public class CopyBD {
 
     // (тесты) Вспомогательный метод для тестов БД. Возращает данные из основной бд, удаляет таблицы,
     // создает временые, заполняет данными.
-    public static ArrayList<ResultSet> CopyBD () throws SQLException {
+    public static ArrayList<ResultSet> CopyTimeBD () throws SQLException {
 
             ArrayList<Integer> a = new ArrayList<>();
             Connection con = ConnectBD.ConnectDB();
@@ -59,7 +59,7 @@ public class CopyBD {
 
     //(тесты) Вспомогательный метод для тестов БД.
     // Удаляет временные таблицы, создает новые, заполняет их сохраненными данными
-    public static void DeleteBD (ArrayList<ResultSet> res) throws SQLException {
+    public static void DeleteTimeBD (ArrayList<ResultSet> res) throws SQLException {
         // (только для тестов) После тестов удаляем бд и возвращаем из копии старую
         Connection con = ConnectBD.ConnectDB();
         Statement statement = con.createStatement();

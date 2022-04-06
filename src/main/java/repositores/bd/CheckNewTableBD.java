@@ -20,9 +20,6 @@ public class CheckNewTableBD {
                         "   draw INT NOT NULL );");
                 //System.out.println("Таблица Rating создана");
             }
-            // Следующая строка это затычка для удаления таблиц, при разработке и отлаживания приложения (обычно скрыто под комментарием)
-            // Запусить сервер - зайти на страницу "данные из бд" - перезапустить сервер
-            //else {statement.executeUpdate("DROP TABLE Rating");}System.out.println("Таблица rating удалена");
 
             resultSet = meta.getTables(null, null, "GAME", null);
             if (!resultSet.next()) {
@@ -34,9 +31,6 @@ public class CheckNewTableBD {
                         "                        result INT NOT NULL);");
                 //System.out.println("Таблица Game создана");
             }
-            // Следующая строка это затычка для удаления таблиц, при разработке и отлаживания приложения (обычно скрыто под комментарием)
-            // Запусить сервер - зайти на страницу "данные из бд" - перезапустить сервер
-            //else {statement.executeUpdate("DROP TABLE Game");}System.out.println("Таблица game удалена");
             con.close();
         } catch (SQLException e) {
             System.out.println(e);
